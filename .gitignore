@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.env
+.env.*
+!.env.example
+qa/*.png
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+recordings/*.wav
+public/calls/*.wav
+recordings/*.log

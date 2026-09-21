@@ -1,0 +1,44 @@
+{
+  "name": "rollcall",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 3210",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node scripts/make-seed.mjs",
+    "qa": "node qa.mjs http://localhost:3210",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm run test && node scripts/verify-seed.mjs",
+    "check:keys": "tsx scripts/check-keys.mts",
+    "record": "tsx scripts/record-sweep.mts",
+    "import:recordings": "tsx scripts/import-recordings.ts",
+    "eval": "tsx scripts/eval.ts",
+    "qa:flow": "node qa-flow.mjs http://localhost:3210",
+    "brand": "node scripts/brand.mjs http://localhost:3210",
+    "rehearse": "tsx scripts/rehearse.mts"
+  },
+  "dependencies": {
+    "@number-flow/react": "^0.6.2",
+    "@phosphor-icons/react": "^2.1.10",
+    "motion": "^13.4.0",
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sonner": "^2.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright": "^1.63.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vercel": "^59.23.2",
+    "vitest": "^5.0.1"
+  }
+}
