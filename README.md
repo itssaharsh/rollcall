@@ -2,6 +2,10 @@
 
 **It phones every doctor's office on a health plan's list, fixes the list, and keeps the clip behind every change.**
 
+**Live: https://rollcall-sage.vercel.app** · [slides](docs/submission/slides.pdf) · [how it is built](#application-of-technology)
+
+![The recorded sweep: six lines dial forty offices, cells fill in, pins drop](docs/media/sweep.gif)
+
 Built on the AssemblyAI Voice Agent API for the [AssemblyAI Voice Agent Hackathon](https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon) (lablab.ai, September 2026).
 
 > Every office in this project is simulated. No real clinic was called, and every phone number is in the 555-01xx range reserved for fiction.
@@ -62,15 +66,25 @@ Most voice agents replace a receptionist. This one calls them, many at once, and
 
 The console is a register, a wall map and a six-line desk phone (`DESIGN.md`, `UI-SPEC.md`). `/_kit` shows every component in every state.
 
+## Evidence, criterion by criterion
+
+| Criterion | Where to look |
+|---|---|
+| Application of Technology | `lib/agent/` (tools, session builder, write gate, live driver), `scripts/lib/bridge.ts`, ADRs 0001, 0005, 0006 |
+| Presentation | the console at `/`, every component and state at `/_kit`, `DESIGN.md`, `UI-SPEC.md` |
+| Business Value | `/about` (the rule, the benchmark, cost per listing), `/report` (the artifact a plan would file) |
+| Originality | click a struck-through cell; open *Needs a human*; open any transcript with a red "Refused by the gate" row |
+| Does it work? | `npm run verify` (no credentials), `npm run eval` (40/40 outcomes, 150/150 written fields, 0 false writes), `tests/replay.test.ts` replays every recorded call through the gate |
+
 ## What is real and what is simulated
 
 | Real | Simulated |
 |---|---|
 | The agent, its tools, the write gate, outcome derivation, the live browser call | Every office, provider, address and phone number |
-| Per-call cost and duration arithmetic | The health plan and the county |
-| `npm run verify`: 62 unit tests + 12 checks over the demo data, no credentials | Until the recorded sweep is imported, the 40 calls on the console are scripted, and clips step through the words without sound |
+| All 40 calls on the console: recorded through the Voice Agent API, with their audio | The health plan and the county |
+| `npm run verify`: 121 tests + 12 checks over the recorded data, no credentials | The front desks are language models playing scripted offices; real ones have phone menus and hold queues |
 
-Accuracy against the offices' hidden truth sheets is published on `/about` once `npm run eval` has scored the recorded sweep. Until then there is no accuracy number, on purpose.
+Scored against the offices' hidden truth sheets (`npm run eval`): 40 of 40 outcomes, 150 of 150 written fields, 0 false writes; the gate refused 5 tool calls. Three listings were re-recorded after the bug they exposed was fixed in code; the other 37 are first takes. Each of those bugs is now a test built from the real call.
 
 ## Run it
 

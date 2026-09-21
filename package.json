@@ -18,7 +18,8 @@
     "eval": "tsx scripts/eval.ts",
     "qa:flow": "node qa-flow.mjs http://localhost:3210",
     "brand": "node scripts/brand.mjs http://localhost:3210",
-    "rehearse": "tsx scripts/rehearse.mts"
+    "rehearse": "tsx scripts/rehearse.mts",
+    "kit": "node scripts/kit.mjs http://localhost:3210"
   },
   "dependencies": {
     "@number-flow/react": "^0.6.2",

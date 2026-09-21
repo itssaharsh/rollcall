@@ -31,6 +31,7 @@ for (const w of widths) {
   page.on('pageerror', (e) => errors.push(`${w} ${page.url()} :: ${e.message}`))
   for (const [name, path] of shots) {
     await page.goto(base + path, { waitUntil: 'networkidle' })
+    await page.addStyleTag({ content: 'nextjs-portal{display:none!important}' }) // the dev-only Next.js badge
     await page.waitForTimeout(900)
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
     if (overflow > 0) errors.push(`${w} ${path} :: horizontal overflow ${overflow}px`)
