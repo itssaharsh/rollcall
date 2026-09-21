@@ -12,8 +12,14 @@ const secondary = 'inline-flex h-11 items-center justify-center rounded-md borde
 
 const FIGURES: [string, string, string, string?][] = [
   ['18%', 'of listed mental-health providers could actually be booked when US Senate staff called 120 of them.', 'Senate Finance Committee, 2023', 'https://www.finance.senate.gov/chairmans-news/wyden-calls-for-action-to-get-rid-of-ghost-networks-releases-secret-shopper-study'],
-  ['90 days', 'is how often the law says a health plan must re-check every listing. Today that is a room of people making the same phone call.', 'No Surprises Act'],
+  ['90 days', 'is how often US law says a health plan must re-check every listing. Today that is a room of people making the same phone call.', 'No Surprises Act, and two more rules below', '#law'],
   [`$${scored.costPerListing.toFixed(2)}`, 'is what one recorded verification call cost here. Vendors put the manual call at “several dollars”.', 'computed from the 40 calls on the console'],
+]
+// each rule was checked against the linked source on 2026-09-22
+const RULES: [string, string, string, string, string][] = [
+  ['2022', 'No Surprises Act', 'Every health plan must verify every directory listing at least every 90 days, and process a reported change within two business days.', '29 U.S.C. §1185i', 'https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section1185i&num=0&edition=prelim'],
+  ['2028', 'REAL Health Providers Act', 'Signed in February 2026. Medicare Advantage plans must re-verify every 90 days, remove a departed provider within five business days, and audit their own accuracy every year. The scores go public in 2029.', 'American Medical Association', 'https://www.ama-assn.org/health-care-advocacy/access-care/more-accurate-medicare-advantage-provider-directory-way'],
+  ['2028', 'Medicaid managed-care rule', 'Every US state must hire an independent party to run yearly secret-shopper calls against each plan’s directory, and report every error found within three business days.', 'Georgetown Center for Children and Families', 'https://ccf.georgetown.edu/2024/05/15/a-closer-look-at-the-access-provisions-in-final-medicaid-managed-care-rule/'],
 ]
 const STEPS: [string, string, string, string][] = [
   ['/shot-console.png', 'One click, forty calls', 'Six lines dial every office on the list. Cells fill in, pins drop, and a tally counts what was right, what changed, and who should not be listed at all.', 'The console after a sweep'],
@@ -28,6 +34,7 @@ export default function Landing() {
       <header className="sticky top-0 z-30 flex h-14 items-center gap-6 border-b border-line bg-surface-1 px-4 sm:px-8">
         <Lockup size={20} />
         <nav className="ml-auto flex items-center gap-1 text-[14px] font-medium text-ink-muted">
+          <a href="#law" className="hidden rounded-sm px-3 py-2 hover:text-ink sm:block">The law</a>
           <a href="#how" className="hidden rounded-sm px-3 py-2 hover:text-ink sm:block">How it works</a>
           <a href="#scored" className="hidden rounded-sm px-3 py-2 hover:text-ink sm:block">The numbers</a>
           <a href="https://github.com/itssaharsh/rollcall" className="hidden rounded-sm px-3 py-2 hover:text-ink sm:block">GitHub</a>
@@ -62,6 +69,26 @@ export default function Landing() {
           <h2 className="t-display max-w-[18ch] text-[clamp(2rem,1.3rem+2.6vw,3.5rem)]">Two phone calls, exactly as they happened.</h2>
           <p className="mt-4 max-w-[60ch] text-[17px] text-ink-muted">These are recordings from the sweep on the console. Press play.</p>
           <div className="mt-8"><Clips /></div>
+        </section>
+
+        <section id="law" className="bg-ink text-canvas">
+          <div className="mx-auto max-w-[1400px] px-4 py-14 sm:px-8 lg:py-20">
+            <div className="grid gap-6 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+              <div>
+                <h2 className="t-display max-w-[14ch] text-[clamp(2rem,1.3rem+2.6vw,3.5rem)]">Nobody chooses to make these calls. The law does.</h2>
+                <p className="mt-4 max-w-[44ch] text-[17px] opacity-75">Three US rules put a date on it. Each one means a person, or an agent, picking up a phone and asking an office whether the listing is still true.</p>
+              </div>
+              <ol className="divide-y divide-canvas/20 border-y border-canvas/20">
+                {RULES.map(([year, name, body, source, href]) => (
+                  <li key={name} className="grid grid-cols-[88px_1fr] gap-4 py-6 sm:grid-cols-[120px_1fr]">
+                    <span className="t-display tnum text-[40px] leading-none sm:text-[52px]">{year}</span>
+                    <div><h3 className="text-[18px] font-semibold">{name}</h3><p className="mt-1 max-w-[56ch] text-[15px] opacity-80">{body}</p>
+                      <a href={href} className="t-label mt-3 inline-block underline underline-offset-4 opacity-70 hover:opacity-100">Source: {source}</a></div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </section>
 
         <section id="how" className="border-t border-line bg-surface-1">
