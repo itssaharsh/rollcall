@@ -86,7 +86,7 @@ With a key (`ASSEMBLYAI_API_KEY=...` in `.env.local`): `npm run check:keys`, the
 
 - English only. One network, one call script.
 - The simulated front desks are language models too; real offices have phone menus and hold queues this does not navigate yet.
-- The live-call budget limiter is in memory per server instance; the hard stops are the 180-second token cap and prepaid credits.
+- The live-call budget limiter is in memory per server instance. The app does not rely on server-side session caps: the UI ends every call at 150 seconds, budgets are low, and the account runs on prepaid credits.
 - A visitor's call audio lives in the browser tab and is gone after a refresh; the row and transcript persist.
 
 ## AI use

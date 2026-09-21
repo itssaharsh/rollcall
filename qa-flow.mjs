@@ -16,8 +16,9 @@ page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
 const ok = (name, pass, extra = '') => { console.log(`${pass ? 'PASS' : 'FAIL'}  ${name}${extra ? '  — ' + extra : ''}`); if (!pass) process.exitCode = 1 }
 const text = (sel) => page.locator(sel).first().innerText()
 
-await page.goto(base + '/', { waitUntil: 'networkidle' })
-ok('first paint is the stale register', (await text('header button')).includes('Start sweep'))
+await page.goto(base + '/?state=before', { waitUntil: 'networkidle' })
+ok('the register starts stale', (await text('header button')).includes('Start sweep') && (await text('section[aria-label="Sweep tally"]')).includes('0/40'))
+await page.goto(base + '/', { waitUntil: 'domcontentloaded' })
 await page.waitForTimeout(2500)
 ok('sweep autoplays without a click', (await text('header button')).includes('Sweeping'))
 const lamps = await page.locator('section[aria-label="Phone lines"] button').count()

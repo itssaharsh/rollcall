@@ -2,8 +2,8 @@
 // In-memory counters reset when a serverless instance recycles. That is acceptable here because the hard
 // stops are elsewhere: tokens cap every session at 120s, and the account runs on prepaid credits.
 const DAY = 24 * 60 * 60 * 1000
-const perDay = Number(process.env.DAILY_CALL_BUDGET ?? 80)
-const perVisitor = Number(process.env.VISITOR_CALL_BUDGET ?? 6)
+const perDay = Number(process.env.DAILY_CALL_BUDGET ?? 40)
+const perVisitor = Number(process.env.VISITOR_CALL_BUDGET ?? 4)
 let day = { start: Date.now(), calls: 0 }
 const visitors = new Map<string, { start: number; calls: number }>()
 
