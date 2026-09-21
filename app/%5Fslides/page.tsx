@@ -42,7 +42,23 @@ export default function Slides() {
         <ul className="mt-10 grid max-w-[1500px] grid-cols-2 gap-x-16 gap-y-6 text-[34px] leading-snug">
           {['Voice Agent API on both ends of every call', 'Key terms built from the row being verified', 'Seven JSON-schema tools, one write per clear answer', 'Refusals return as tool errors the agent follows', 'Temporary tokens: the key never reaches the browser', 'Audio sent only around speech, for steady turn-taking'].map((x) => <li key={x} className="border-t-2 border-ink pt-4">{x}</li>)}
         </ul></Slide>
-      <Slide n={9} dark><H>Now you be the front desk.</H><P>rollcall-sage.vercel.app → Answer a call. What you say becomes row 41.</P><p className="t-label mt-16 text-[20px] opacity-70">{META.plan} and every office are simulated. No real clinic was called.</p></Slide>
+      <Slide n={9}><H>Who pays, and for what</H>
+        <ul className="mt-10 grid max-w-[1560px] grid-cols-2 gap-x-16 gap-y-6 text-[32px] leading-snug">
+          {['Buyer: the provider-data team at a US health plan. The work is mandated every 90 days.', 'Practices already spend $2.76B a year answering directory requests (CAQH survey, 2019).', 'A manual verification call costs “several dollars” (vendor benchmark). Ours cost $0.08 in API time.', 'Price per verified listing, with the audio evidence included. Our assumption: well under half the manual cost.', 'From 2028 Medicare Advantage plans must re-verify and publish accuracy scores; states must run secret-shopper calls.', 'Same engine, next markets: any fact that only a phone call can answer.'].map((x) => <li key={x} className="border-t-2 border-ink pt-4">{x}</li>)}
+        </ul></Slide>
+      <Slide n={10} dark><H>What exists, and what is different</H>
+        <ul className="mt-10 grid max-w-[1560px] grid-cols-3 gap-x-12 text-[30px] leading-snug">
+          <li className="border-t-2 border-canvas pt-4"><b>Call centres.</b> Today’s default. Slow, several dollars a call, no evidence kept.</li>
+          <li className="border-t-2 border-canvas pt-4"><b>Enterprise vendors.</b> Voice outreach sold to large plans. Validates the buyer. Closed, no public proof.</li>
+          <li className="border-t-2 border-canvas pt-4"><b>Rollcall.</b> Every written value carries its audio. A gate in code refuses guesses. Scored in public against truth sheets.</li>
+        </ul></Slide>
+      <Slide n={11}><H>What comes next</H>
+        <ol className="mt-10 grid max-w-[1560px] grid-cols-3 gap-x-12 text-[30px] leading-snug">
+          <li className="border-t-2 border-ink pt-4"><span className="t-label text-[18px] text-ink-muted">Next</span><br />Real phone lines over SIP. Phone menus, hold queues, voicemail.</li>
+          <li className="border-t-2 border-ink pt-4"><span className="t-label text-[18px] text-ink-muted">Then</span><br />A pilot sweep with one plan’s real directory, offices told in advance.</li>
+          <li className="border-t-2 border-ink pt-4"><span className="t-label text-[18px] text-ink-muted">Later</span><br />The 2028 audits: accuracy reports a plan can file, with evidence per listing.</li>
+        </ol></Slide>
+      <Slide n={12} dark><H>Now you be the front desk.</H><P>rollcall-sage.vercel.app → Answer a call. What you say becomes row 41.</P><p className="t-label mt-16 text-[20px] opacity-70">{META.plan} and every office are simulated. No real clinic was called.</p></Slide>
     </main>
   )
 }

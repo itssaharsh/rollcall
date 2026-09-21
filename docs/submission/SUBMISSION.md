@@ -23,7 +23,16 @@ Every office is simulated. No real clinic was called.
 
 **Links:** demo https://rollcall-sage.vercel.app · repo https://github.com/itssaharsh/rollcall · slides `docs/submission/slides.pdf` · cover `docs/submission/cover.png`
 
-## Video, 3:00 or less (you record and voice this)
+## How lablab scores (read from lablab.ai/hackathon-rules on 2026-09-22)
+
+Each criterion is 1 to 5. What the top scores ask for, in lablab's words:
+
+- **Presentation (pdf and video):** 4 = "communicates the problem, solution, and value proposition in less than 5 min. Explain market analysis and marketing revenue. Explain future goals & plans." 5 adds "competitive analysis". A video under 3 minutes is described at the low end. So: **3:30 to 4:30, and say the market, the revenue model, the competition and the plan out loud** (slides 9 to 11).
+- **Application of technology:** 4 = "Demo video is shown with all features tried. Demo link is working… Github code is available & well thought off." So the video must show every feature being used, not described.
+- **Business value:** 4 = "clear market potential… Strong market feasibility and scalability." 5 = "clear sustainable revenue generation".
+- **Originality:** 4 = "innovative idea employing unconventional methods". Lead with the gate that refuses to guess and the clip behind every cell.
+
+## Video, 3:30 to 4:30 (you record and voice this)
 
 | Time | Screen | Say |
 |---|---|---|
@@ -36,6 +45,9 @@ Every office is simulated. No real clinic was called.
 | 1:40 | Answer a call, live | play the front desk: change the suite, hedge on new patients |
 | 2:25 | row 41, then /report | "What I said is now row 41, and the plan files this report." |
 | 2:40 | slide 7 | "Forty of forty outcomes, no false writes, eight cents a listing." |
-| 2:50 | URL | "rollcall-sage.vercel.app. Go be the front desk." |
+| 2:55 | slide 9 | who pays: plan data teams, mandated every 90 days; $2.76B a year already spent by practices; several dollars a manual call against eight cents |
+| 3:20 | slide 10 | call centres, enterprise vendors, and what is different: audio behind every value, a gate that refuses guesses, a public score |
+| 3:40 | slide 11 | next: real phone lines, a pilot with one plan, the 2028 audits |
+| 4:00 | URL | "rollcall-sage.vercel.app. Go be the front desk." |
 
-Record at 1920×1080, captions on, product on screen by 0:18.
+Record at 1920×1080, captions on, product on screen by 0:18. Show every feature being used: sweep, clip from a cell, review queue, refused row, live call, report.
