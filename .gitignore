@@ -12,3 +12,4 @@ recordings/*.wav
 public/calls/*.wav
 recordings/*.log
 .env*
+private/
