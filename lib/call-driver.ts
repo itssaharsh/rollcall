@@ -41,14 +41,14 @@ export class SimulatedDriver implements CallDriver {
   setMuted() {}
 
   start() {
-    const { turns, duration, result } = seed.yourCall.sample
+    const { turns, duration, result, audio } = seed.yourCall.sample
     this.began = performance.now()
     this.cursor = 0
     this.done = []
     const loop = (now: number) => {
       const t = (now - this.began) / 1000
       const turn = turns[this.cursor]
-      if (!turn) { this.emit({ type: 'end', result, duration, turns: this.done }); return }
+      if (!turn) { this.emit({ type: 'end', result, duration, turns: this.done, audio }); return }
       if (t >= turn.t0) {
         if (turn.who === 'tool') {
           const key = turn.tool?.args.field as FieldKey | undefined

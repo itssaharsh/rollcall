@@ -1,0 +1,187 @@
+{
+ "duration": 85.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.5,
+   "t1": 3.2,
+   "text": "Juniper Row Counseling."
+  },
+  {
+   "who": "agent",
+   "t0": 3.2,
+   "t1": 15,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Salome Reyes still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.2,
+   "t1": 20.2,
+   "text": "Yes."
+  },
+  {
+   "who": "agent",
+   "t0": 20.2,
+   "t1": 30.2,
+   "text": "Got it. Are you still at 88 Juniper Row, Suite 3, and is this number, ending 0 1 4 1, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 33.6,
+   "t1": 38.6,
+   "text": "We are in Suite 4 instead of 3. And yes, that number is correct."
+  },
+  {
+   "who": "agent",
+   "t0": 38.6,
+   "t1": 45.8,
+   "text": "I will update that. To be sure, you are at 88 Juniper Row, Suite 4?"
+  },
+  {
+   "who": "office",
+   "t0": 50,
+   "t1": 50.8,
+   "text": "Yes."
+  },
+  {
+   "who": "tool",
+   "t0": 53.2,
+   "t1": 53.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 53.2,
+   "t1": 53.3,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "88 Juniper Row, Suite 4"
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 53.8,
+   "t1": 61.4,
+   "text": "Thanks. Last one: is Salome Reyes taking new patients, and does Salome Reyes still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 65.6,
+   "t1": 68.3,
+   "text": "I think she might be. You would have to ask her."
+  },
+  {
+   "who": "office",
+   "t0": 69,
+   "t1": 72.5,
+   "text": "And yes, she takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 74.6,
+   "t1": 74.7,
+   "text": "mark_unconfirmed",
+   "tool": {
+    "name": "mark_unconfirmed",
+    "args": {
+     "field": "accepting",
+     "reason": "hedged_answer"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 75.9,
+   "t1": 76,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 78.9,
+   "t1": 79,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 78.3,
+   "t1": 82.2,
+   "text": "Thanks for all your help. I have updated our records. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes.",
+   "at": 85.1,
+   "clip": [
+    50,
+    50.8
+   ]
+  },
+  "address": {
+   "status": "corrected",
+   "value": "88 Juniper Row, Suite 4",
+   "quote": "We are in Suite 4 instead of 3. And yes, that number is correct.",
+   "at": 53.2,
+   "clip": [
+    33.6,
+    38.6
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "We are in Suite 4 instead of 3. And yes, that number is correct.",
+   "at": 53.2,
+   "clip": [
+    33.6,
+    38.6
+   ]
+  },
+  "accepting": {
+   "status": "unconfirmed",
+   "quote": "I think she might be. You would have to ask her.",
+   "at": 74.6,
+   "clip": [
+    65.6,
+    68.3
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "And yes, she takes Cascadia Health Plan.",
+   "at": 75.9,
+   "clip": [
+    69,
+    72.5
+   ]
+  }
+ },
+ "outcome": {
+  "outcome": "review",
+  "stamp": "Needs a human"
+ }
+}

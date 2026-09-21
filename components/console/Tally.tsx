@@ -4,6 +4,7 @@ import { Glyph } from '@/components/brand/glyphs'
 import { Tip } from '@/components/ui/Bits'
 import { clock, money } from '@/lib/format'
 import { META } from '@/lib/seed'
+import scored from '@/seed/eval.json'
 import { phaseOf, sweepStats, type Mode, type Tally as TallyT } from '@/lib/sweep-engine'
 import { OUTCOME_LABEL, OUTCOME_ORDER, type Listing, type Outcome } from '@/lib/types'
 
@@ -47,6 +48,7 @@ export function Tally({ tally, listings, t, mode, filter, onFilter, onOpen }: {
           })}
         </div>
         <p className="t-mono truncate text-ink-muted">{clock(META.sweepDuration)} sweep · {clock(stats.avgCall)} avg call · {money(stats.costPerListing)}/listing</p>
+        {mode === 'done' && <p className="t-mono truncate text-ink" title="npm run eval: every written field compared with the offices' hidden truth sheets">{scored.fieldsRight}/{scored.fieldsWritten} fields match truth sheets · {scored.falseWrites} false writes · {scored.gateRefusals} refused</p>}
       </div>
     </section>
   )

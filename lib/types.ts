@@ -18,6 +18,8 @@ export interface Turn {
   text: string
   words?: Word[]
   tool?: { name: string; args: Record<string, string | boolean | number> }
+  /** why the write gate refused this tool call, in the words that went back to the model */
+  note?: string
 }
 
 export interface FieldResult {
@@ -86,7 +88,7 @@ export interface Seed {
   listings: Listing[]
   yourCall: {
     listing: Omit<Listing, 'result' | 'call'>
-    sample: { duration: number; answeredBy: AnsweredBy; turns: Turn[]; result: Listing['result'] }
+    sample: { duration: number; answeredBy: AnsweredBy; turns: Turn[]; result: Listing['result']; audio?: string }
   }
 }
 

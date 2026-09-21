@@ -1,6 +1,6 @@
 // Two Voice Agent sessions on one phone line: the caller (Rollcall) and a simulated front desk.
 // Audio is delivered in real time in both directions and mixed onto one tape, so the recording is the call as it happened.
-import { agentSaid, gate, mergeWrite, newGateContext, officeSaid } from '../../lib/agent/gate'
+import { agentSaid, gate, mergeWrite, newGateContext, officeSaid, sweepUp } from '../../lib/agent/gate'
 import { deriveOutcome } from '../../lib/agent/outcome'
 import { VoiceGate } from '../../lib/agent/voice-gate'
 import type { FieldKey, FieldResult, Turn } from '../../lib/types'
@@ -36,7 +36,7 @@ export async function runCall(opts: { callerSession: Record<string, unknown>; of
       const v = gate({ name, arguments: args }, ctx)
       const clipOf = (quote?: string) => { const hit = [...turns].reverse().find((t) => t.who === 'office' && quote && (quote.includes(t.text) || t.text.includes(quote))) ?? [...turns].reverse().find((t) => t.who === 'office'); return hit ? ([hit.t0, hit.t1] as [number, number]) : undefined }
       const answer = [...turns].reverse().find((t) => t.who === 'office')
-      turns.push({ who: 'tool', t0: +now.toFixed(1), t1: +(now + 0.1).toFixed(1), text: v.ok ? name : `${name} ✕ refused`, tool: { name, args: args as Record<string, string> } })
+      turns.push({ who: 'tool', t0: +now.toFixed(1), t1: +(now + 0.1).toFixed(1), text: v.ok ? name : `${name} ✕ refused`, tool: { name, args: args as Record<string, string> }, ...(v.ok ? (v.note ? { note: v.note } : {}) : { note: v.error }) })
       if (v.ok) {
         const writes = v.writes ?? (v.field && v.result ? [{ field: v.field, result: v.result }] : [])
         for (const w of writes) fields[w.field] = mergeWrite(fields[w.field], { ...w.result, at: +now.toFixed(1), clip: clipOf(w.result.quote) })
@@ -85,6 +85,7 @@ export async function runCall(opts: { callerSession: Record<string, unknown>; of
     return !((goodbyeDone >= 0 && now - goodbyeDone > 2.5) || (hangUp && quiet > 30) || n >= maxFrames - 1)
   })
   await Promise.all([caller.close(), office.close()])
+  for (const w of sweepUp(ctx, fields)) { const hit = [...turns].reverse().find((t) => t.who === 'office' && w.result.quote!.includes(t.text)); fields[w.field] = { ...w.result, at: +now.toFixed(1), clip: hit ? [hit.t0, hit.t1] : undefined } }
   const duration = +now.toFixed(1)
   return { turns, fields, flags, duration, tape: tape.subarray(0, Math.ceil(now * RATE)), said, refusals, sessions: { caller: caller.sessionId, office: office.sessionId }, outcome: deriveOutcome({ fields, flags, answeredBy: opts.answeredBy }) }
 }

@@ -19,10 +19,18 @@ for (const file of readdirSync('recordings').filter((f) => /^L-\d+\.json$/.test(
     if (ffmpeg) { execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', wav, '-ac', '1', '-ar', '16000', '-b:a', '24k', `public/calls/${rec.id}.mp3`]); audio = `/calls/${rec.id}.mp3` }
     else { copyFileSync(wav, `public/calls/${rec.id}.wav`); audio = `/calls/${rec.id}.wav` }
   }
+  { let i = 0; for (const t of rec.turns) if (t.who === 'tool' && t.text.includes('refused') && !t.note) t.note = String(rec.refusals?.[i++] ?? '').replace(/^[a-z_]+\(.*?\): /, '') }
   if (rec.fields.phone?.value) rec.fields.phone.value = formatPhone(rec.fields.phone.value)
   l.result = { ...l.result, outcome: rec.outcome.outcome, stamp: rec.outcome.stamp, reason: rec.outcome.reason, fields: rec.fields }
   l.call = { ...l.call, duration: rec.duration, answeredBy: rec.answeredBy, turns: rec.turns, audio, sessionId: rec.sessions?.caller }
   n++
+}
+// the sample call a visitor can watch is a real recorded rehearsal of the live-mode agent (npm run rehearse)
+if (existsSync('recordings/rehearsal.json')) {
+  const r = JSON.parse(readFileSync('recordings/rehearsal.json', 'utf8'))
+  let audio: string | undefined
+  if (existsSync('recordings/rehearsal.wav')) { if (ffmpeg) { execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', 'recordings/rehearsal.wav', '-ac', '1', '-ar', '16000', '-b:a', '24k', 'public/calls/sample.mp3']); audio = '/calls/sample.mp3' } }
+  seed.yourCall.sample = { duration: r.duration, answeredBy: 'person', turns: r.turns, result: { outcome: r.outcome.outcome, stamp: r.outcome.stamp, reason: r.outcome.reason, fields: r.fields }, ...(audio ? { audio } : {}) } as typeof seed.yourCall.sample
 }
 // same scheduler as make-seed: next free line, 3s dialing, 7s flash
 const free = Array(seed.meta.lines).fill(1.5)

@@ -33,7 +33,7 @@ export default function About() {
       <p className="mt-3 text-[13px] text-ink-muted">Source: <a className="text-accent underline underline-offset-2" href="https://www.finance.senate.gov/chairmans-news/wyden-calls-for-action-to-get-rid-of-ghost-networks-releases-secret-shopper-study">Senate Finance Committee secret-shopper study, May 2023</a>.</p>
 
       <h2 className="t-display mt-12 text-[24px]">The 90-day rule</h2>
-      <p className="mt-3">The No Surprises Act already requires plans to verify directory data every 90 days. The REAL Health Providers Act makes that verification proactive for every record from plan year 2028, and CMS requires states to run annual secret-shopper surveys of Medicaid managed-care directories from July 2028. Today that work is a call centre asking the same five questions.</p>
+      <p className="mt-3">The No Surprises Act already requires plans to verify directory data every 90 days. The REAL Health Providers Act makes that verification proactive for every record from plan year 2028, and CMS requires states to run annual secret-shopper surveys of Medicaid managed-care directories from July 2028. Today that work is a call centre asking the same five questions. One vendor in this market puts a manual verification call at <a className="text-accent underline underline-offset-2" href="https://www.hilabs.com/blog/ai-voice-agent-for-healthcare-provider-data-verification">“several dollars per interaction”</a>; the recorded calls on the console cost about eight cents each.</p>
 
       <h2 className="t-display mt-12 text-[24px]">How one call works</h2>
       <ol className="mt-4 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3">

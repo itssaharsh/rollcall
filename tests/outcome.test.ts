@@ -15,7 +15,10 @@ describe('outcome is derived from what was written, not from the model', () => {
   })
 
   it('the sample call derives the same way', () => {
-    expect(deriveOutcome({ fields: yourCall.sample.result.fields, flags: [], answeredBy: 'person' })).toMatchObject({ outcome: 'corrected', stamp: 'Corrected ·1' })
+    // the sample is a real recorded rehearsal, so the expectation comes from the data: a suite corrected, a hedge sent to a person
+    expect(deriveOutcome({ fields: yourCall.sample.result.fields, flags: [], answeredBy: 'person' })).toMatchObject({ outcome: yourCall.sample.result.outcome, stamp: yourCall.sample.result.stamp })
+    expect(yourCall.sample.result.fields.address.status).toBe('corrected')
+    expect(yourCall.sample.result.fields.accepting.status).toBe('unconfirmed')
   })
 
   it('a call that ends with questions unanswered goes to a person', () => {

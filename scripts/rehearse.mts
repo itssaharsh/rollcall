@@ -1,6 +1,7 @@
 // Rehearses the visitor's live call without a microphone: the live-mode agent phones a simulated front desk that behaves
 // the way you describe.   npm run rehearse -- "You are in suite 4 now, not suite 3. Everything else on file is right."
-import { readFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { writeWav } from './lib/aai'
 import { sessionFor } from '../lib/agent/session'
 import type { Seed } from '../lib/types'
 import { runCall } from './lib/bridge'
@@ -15,6 +16,7 @@ const r = await runCall({
     greeting: `${row.practice}.`, input: { transcription_mode: 'min_latency', turn_detection: { min_silence: 350, max_silence: 900 } }, output: { voice: 'mary' },
   },
 })
+if (process.env.SAVE === '1') { writeWav('recordings/rehearsal.wav', r.tape); writeFileSync('recordings/rehearsal.json', JSON.stringify({ duration: r.duration, turns: r.turns, fields: r.fields, outcome: r.outcome }, null, 1)); console.log('saved recordings/rehearsal.json + .wav') }
 console.log(`\n→ ${r.outcome.outcome} (${r.outcome.stamp}) in ${r.duration}s`)
 for (const [k, f] of Object.entries(r.fields)) console.log(`  ${k.padEnd(11)} ${f.status.padEnd(12)} ${f.value ?? ''}  ${f.quote ? '“' + f.quote.slice(0, 90) + '”' : ''}`)
 if (r.refusals.length) console.log('gate refusals:\n  ' + r.refusals.join('\n  '))

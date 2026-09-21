@@ -40,6 +40,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
   const [secs, setSecs] = useState(0)
   const [row, setRow] = useState<number | null>(null)
   const [stampText, setStampText] = useState('')
+  const [outcome, setOutcome] = useState<Listing['result']['outcome']>('corrected')
 
   const hangUp = useCallback(() => { driver.current?.stop(); driver.current = null; stopRing() }, [])
 
@@ -62,7 +63,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
           setTurns(shown); setSecs(s === 'connected' ? 24 : Math.round(sample.duration))
           setFields(s === 'connected' ? { practising: sample.result.fields.practising } : sample.result.fields)
           if (s === 'connected') { setVoice('agent'); setPartial({ who: 'agent', text: 'Thanks. We list the office at 88 Juniper Row,' }) }
-          if (s === 'done') { setRow(41); setStampText(sample.result.stamp) }
+          if (s === 'done') { setRow(41); setStampText(sample.result.stamp); setOutcome(sample.result.outcome) }
         }
         setState(s)
       }
@@ -87,7 +88,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
     setState('wrap'); setPartial(null)
     setTimeout(() => {
       const listing: Listing = { ...office, tag: sample ? 'Sample call' : 'Your call', result: e.result, call: { line: 7, startAt: 0, duration: e.duration, answeredBy: 'person', turns: e.turns, audio: e.audio } }
-      setRow(addYourRow(listing)); setStampText(e.result.stamp); setState('done')
+      setRow(addYourRow(listing)); setStampText(e.result.stamp); setOutcome(e.result.outcome); setState('done')
     }, 1100)
   }, [])
 
@@ -198,7 +199,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
               </div>
             )}
             <div>
-              <div className="flex items-center justify-between"><p className="t-label text-ink-muted">What Rollcall heard</p>{state === 'done' && stampText && <StatusStamp outcome="corrected" text={stampText} />}</div>
+              <div className="flex items-center justify-between"><p className="t-label text-ink-muted">What Rollcall heard</p>{state === 'done' && stampText && <StatusStamp outcome={outcome} text={stampText} />}</div>
               <dl className="mt-1.5 divide-y divide-line border-y border-line">
                 {FIELD_ORDER.map((k) => {
                   const f = fields[k]

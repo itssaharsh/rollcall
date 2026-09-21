@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { agentSaid, digitsHeard, gate, isHedged, mergeWrite, newGateContext, officeSaid, type GateContext } from '../lib/agent/gate'
+import { agentSaid, digitsHeard, gate, isHedged, mergeWrite, newGateContext, officeSaid, sweepUp, type GateContext } from '../lib/agent/gate'
 
 const ctx = (...heard: string[]): GateContext => { const c = newGateContext(); heard.forEach((h) => officeSaid(c, h)); return c }
 
@@ -82,6 +82,19 @@ describe('write gate: no value is written unless the office said it', () => {
 
   it.each(["Yes, she's taking new patients.", 'Yep, same suite.', "That's correct.", 'We do, yes.'])('"%s" is a clear answer', (said) => {
     expect(gate({ name: 'confirm_fields', arguments: { fields: ['accepting'] } }, ctx(said)).ok).toBe(true)
+  })
+
+  it('at hang-up, a forgotten field is confirmed only on a clear yes to its own question', () => {
+    const blank = () => ({ practising: { status: 'not_asked' as const }, address: { status: 'not_asked' as const }, phone: { status: 'not_asked' as const }, accepting: { status: 'not_asked' as const }, inNetwork: { status: 'not_asked' as const } })
+    const c = newGateContext({ practising: 'Yes', address: '88 Juniper Row, Suite 3', accepting: 'Yes' })
+    agentSaid(c, 'Is Salome Reyes still seeing patients at your office?'); officeSaid(c, 'Yes, she is.')
+    agentSaid(c, 'Are you still at 88 Juniper Row, Suite 3, and is this number, ending 0 1 4 1, the best one for booking?'); officeSaid(c, 'We are in suite 4 instead of 3, and yes, that is the best number.')
+    agentSaid(c, 'Last one: is she taking new patients, and does she still take Cascadia Health Plan?'); officeSaid(c, 'I think she might be.')
+    const got = sweepUp(c, blank()).map((w) => w.field)
+    expect(got).toContain('practising')      // clear yes
+    expect(got).not.toContain('address')     // a change, not a yes
+    expect(got).not.toContain('accepting')   // hedged
+    expect(got).not.toContain('inNetwork')   // hedged exchange
   })
 
   it('sends the field to a human on the second unclear answer', () => {

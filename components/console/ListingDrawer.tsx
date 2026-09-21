@@ -101,8 +101,9 @@ export function ListingDrawer({ listing: l, t, mode, field, resolution, onResolv
                   {!l.call.audio && phase === 'done' && <p className="mt-1 text-[12px] text-ink-muted">Audio arrives with the recorded sweep. Until then clips step through the words without sound.</p>}
                   <ol className="mt-3 flex flex-col gap-2.5">
                     {turns.map((turn) => turn.who === 'tool' ? (
-                      <li key={turn.t0 + turn.text} className={`t-mono flex gap-2 pl-[68px] ${TOOL_TONE[turn.text] ?? 'text-ink-muted'}`}>
-                        <span aria-hidden>↳</span><span className="font-semibold">{turn.text}</span><span className="text-ink-muted">{Object.values(turn.tool?.args ?? {}).join(' · ')}</span>
+                      <li key={turn.t0 + turn.text} className={`t-mono pl-[68px] ${turn.text.includes('refused') ? 'text-danger' : TOOL_TONE[turn.text] ?? 'text-ink-muted'}`}>
+                        <span className="flex flex-wrap gap-x-2"><span aria-hidden>↳</span><span className="font-semibold">{turn.text.replace(' ✕ refused', '')}</span><span className="text-ink-muted">{Object.values(turn.tool?.args ?? {}).flat().join(' · ')}</span>{turn.text.includes('refused') && <span className="t-label rounded-sm border border-danger px-1">Refused by the gate</span>}</span>
+                        {turn.note && <span className="mt-1 block font-sans text-[12px] leading-snug text-ink-muted [font-stretch:85%]">{turn.text.includes('refused') ? 'Gate: ' : 'Gate note: '}{turn.note}</span>}
                       </li>
                     ) : (
                       <li key={turn.t0} id={`turn-${turn.t0}`} className="grid grid-cols-[60px_1fr] gap-2">

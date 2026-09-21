@@ -4,7 +4,7 @@
 // Written against the docs on 2026-09-21; first run with a real key is tracked in docs/PLAN.md (check 2).
 import type { CallDriver, CallErrorCode, CallEvent } from '../call-driver'
 import type { FieldKey, FieldResult, Listing, Turn } from '../types'
-import { agentSaid, gate, mergeWrite, newGateContext, officeSaid } from './gate'
+import { agentSaid, gate, mergeWrite, newGateContext, officeSaid, sweepUp } from './gate'
 import { deriveOutcome } from './outcome'
 import { sessionFor } from './session'
 import { VoiceGate } from './voice-gate'
@@ -167,7 +167,7 @@ export class AssemblyDriver implements CallDriver {
     const at = +this.now().toFixed(1)
     const answer = [...this.turns].reverse().find((t) => t.who === 'office')
     const clipOf = (quote?: string) => { const hit = [...this.turns].reverse().find((t) => t.who === 'office' && quote && (quote.includes(t.text) || t.text.includes(quote))) ?? answer; return hit ? ([hit.t0, hit.t1] as [number, number]) : undefined }
-    this.turns.push({ who: 'tool', t0: at, t1: at + 0.1, text: verdict.ok ? name : `${name} ✕ refused`, tool: { name, args: args as Record<string, string> } })
+    this.turns.push({ who: 'tool', t0: at, t1: at + 0.1, text: verdict.ok ? name : `${name} ✕ refused`, tool: { name, args: args as Record<string, string> }, ...(verdict.ok ? (verdict.note ? { note: verdict.note } : {}) : { note: verdict.error }) })
 
     if (verdict.ok) {
       const writes = verdict.writes ?? (verdict.field && verdict.result ? [{ field: verdict.field, result: verdict.result }] : [])
@@ -201,6 +201,7 @@ export class AssemblyDriver implements CallDriver {
   private finish() {
     if (this.ended) return
     this.ended = true
+    for (const w of sweepUp(this.gateCtx, this.fields)) { const hit = [...this.turns].reverse().find((t) => t.who === 'office' && w.result.quote!.includes(t.text)); this.write(w.field, { ...w.result, at: +this.now().toFixed(1), clip: hit ? [hit.t0, hit.t1] : undefined }) }
     const wrongNumber = this.flags.includes('wrong_number')
     const derived = deriveOutcome({ fields: this.fields, flags: this.flags, answeredBy: wrongNumber ? 'wrong_number' : 'person' })
     this.emit({ type: 'end', duration: +this.now().toFixed(1), turns: this.turns, audio: this.wav(), result: { ...derived, fields: this.fields } })

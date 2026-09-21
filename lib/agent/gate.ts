@@ -43,6 +43,24 @@ export function contradictsListed(field: FieldKey, listed: string | undefined, e
 }
 
 /**
+ * At hang-up, fields the model never recorded. Live calls record everything at the end and the model sometimes drops one
+ * (rehearsal, 2026-09-22: four fields written, the first forgotten). A forgotten field is confirmed only when the office gave a
+ * clear yes to the question that was about that field: affirmative, not negative, not hedged. Anything else stays unwritten.
+ */
+export function sweepUp(ctx: GateContext, fields: Record<FieldKey, FieldResult>): { field: FieldKey; result: FieldResult }[] {
+  return FIELDS.filter((f) => fields[f].status === 'not_asked').flatMap((field) => {
+    const asked = [...ctx.exchanges].reverse().find((x) => x.heard.length && ASKED[field].test(x.asked.toLowerCase()))
+    if (!asked || asked.heard.some(isHedged)) return []
+    const clauses = asked.heard.join('. ').toLowerCase().split(/\bbut\b|\band\b|[,;.]/).map((c) => c.trim()).filter(Boolean)
+    const about = clauses.filter((c) => TOPIC[field].test(c))
+    const judged = (about.length ? about : clauses).join(' ')
+    if (!AFFIRMS.test(asked.heard.join(' ').toLowerCase()) || NEGATIVE.test(judged) || /\b(instead|moved|new (address|number)|changed)\b/.test(judged)) return []
+    if (contradictsListed(field, ctx.listed?.[field], judged)) return []
+    return [{ field, result: { status: 'confirmed' as const, quote: asked.heard.join(' ') } }]
+  })
+}
+
+/**
  * What a field holds after a new write. Recorded 2026-09-22 (listing L-010): the model corrected the booking phone, then
  * swept it up in a later confirm_fields and the correction was lost. A confirmation never overwrites a correction.
  */
