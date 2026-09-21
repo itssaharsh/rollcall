@@ -1,0 +1,193 @@
+{
+ "id": "L-027",
+ "kind": "confirmed_hold",
+ "answeredBy": "person",
+ "duration": 77.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.2,
+   "t1": 3.9,
+   "text": "Eastbank Mind & Mood Clinic, can you hold please?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.9,
+   "t1": 6.6,
+   "text": "Of course."
+  },
+  {
+   "who": "office",
+   "t0": 11.4,
+   "t1": 13.8,
+   "text": "Thanks for waiting. How can I help you?"
+  },
+  {
+   "who": "agent",
+   "t0": 13.9,
+   "t1": 24.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Halvorsen still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 28.1,
+   "t1": 29.9,
+   "text": "Yes, he's still here."
+  },
+  {
+   "who": "tool",
+   "t0": 31.6,
+   "t1": 31.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 31.7,
+   "t1": 40.9,
+   "text": "Are you still at 1412 Varnum Blvd, Suite 210, and is this number, ending 0 1 2 7, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 44.8,
+   "t1": 45.8,
+   "text": "That's correct."
+  },
+  {
+   "who": "office",
+   "t0": 46,
+   "t1": 50.7,
+   "text": "The booking number is 5645550127."
+  },
+  {
+   "who": "tool",
+   "t0": 51.7,
+   "t1": 51.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 52,
+   "t1": 60.5,
+   "text": "Last one: is Dr. Halvorsen taking new patients, and does Dr. Halvorsen still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 64.5,
+   "t1": 68.7,
+   "text": "He is taking new patients, and yes, we take Cascadia."
+  },
+  {
+   "who": "tool",
+   "t0": 69.2,
+   "t1": 69.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 71.3,
+   "t1": 71.4,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 69.4,
+   "t1": 74.3,
+   "text": "Thank you so much for your help. Have a great day!"
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he's still here.",
+   "at": 31.6,
+   "clip": [
+    28.1,
+    29.9
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. The booking number is 5645550127.",
+   "at": 51.7,
+   "clip": [
+    46,
+    50.7
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. The booking number is 5645550127.",
+   "at": 51.7,
+   "clip": [
+    46,
+    50.7
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is taking new patients, and yes, we take Cascadia.",
+   "at": 69.2,
+   "clip": [
+    64.5,
+    68.7
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is taking new patients, and yes, we take Cascadia.",
+   "at": 69.2,
+   "clip": [
+    64.5,
+    68.7
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Eastbank Mind & Mood Clinic, can you hold please?",
+  "Thanks for waiting. How can I help you?",
+  "Yes, he's still here.",
+  "That's correct. The booking number is five six four five five five zero one two seven.",
+  "He is taking new patients. And yes, we take Cascadia.",
+  "You too. Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_96c522b61f4842dda90b32c2f01f7264",
+  "office": "sess_038b103100954fdc8e5cffee0a66a16d"
+ }
+}

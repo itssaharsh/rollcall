@@ -1,0 +1,173 @@
+{
+ "id": "L-011",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 65.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.8,
+   "t1": 4.6,
+   "text": "Lantern Family Counseling, this is Paula."
+  },
+  {
+   "who": "agent",
+   "t0": 4.6,
+   "t1": 15.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Owen Gallagher still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20,
+   "t1": 21.6,
+   "text": "Yes, he is."
+  },
+  {
+   "who": "tool",
+   "t0": 23.5,
+   "t1": 23.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.6,
+   "t1": 31.1,
+   "text": "Are you still at 57 Cooper St, and is this number, ending 0 1 1 1, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.4,
+   "t1": 36.8,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.4,
+   "t1": 44.8,
+   "text": "57 Cooper Street is our address, and you can reach the booking line at 564-555-0111."
+  },
+  {
+   "who": "tool",
+   "t0": 45.9,
+   "t1": 46,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 46,
+   "t1": 54.4,
+   "text": "Last one: is Owen Gallagher taking new patients, and does Owen Gallagher still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 59.1,
+   "t1": 63.2,
+   "text": "He is accepting new patients, and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 63.7,
+   "t1": 63.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.7,
+   "t1": 65.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is.",
+   "at": 23.5,
+   "clip": [
+    20,
+    21.6
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. 57 Cooper Street is our address, and you can reach the booking line at 564-555-0111.",
+   "at": 45.9,
+   "clip": [
+    37.4,
+    44.8
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. 57 Cooper Street is our address, and you can reach the booking line at 564-555-0111.",
+   "at": 45.9,
+   "clip": [
+    37.4,
+    44.8
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 63.7,
+   "clip": [
+    59.1,
+    63.2
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 63.7,
+   "clip": [
+    59.1,
+    63.2
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Lantern Family Counseling, this is Paula.",
+  "Yes, he is.",
+  "That is correct. 5 7 Cooper Street is our address and you can reach the booking line at 5 6 4 5 5 5 0 1 1 1.",
+  "He is accepting new patients and we do take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_6e8d81b065b440acadbef9d8da405181",
+  "office": "sess_1f837d7e913b4a20a8378b1a6b6c42e5"
+ }
+}

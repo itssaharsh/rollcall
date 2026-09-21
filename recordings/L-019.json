@@ -1,0 +1,201 @@
+{
+ "id": "L-019",
+ "kind": "accepting_no",
+ "answeredBy": "person",
+ "duration": 72.3,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.6,
+   "t1": 4.9,
+   "text": "Thanks for calling Eastbank Counseling Collective. Marisol speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 4.9,
+   "t1": 15.9,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Amara Nwosu still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.9,
+   "t1": 22.3,
+   "text": "Yes, she is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 24.1,
+   "t1": 24.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.2,
+   "t1": 32,
+   "text": "Are you still at 2203 Pruett St, and is this number, ending 0 1 1 9, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36,
+   "t1": 43.5,
+   "text": "The address is 2203 Pruett St., and yes, the number ending in 0 1 1 9 is the best one for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 44.7,
+   "t1": 44.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 44.8,
+   "t1": 52.6,
+   "text": "Last one: is Amara Nwosu taking new patients, and does Amara Nwosu still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 57,
+   "t1": 60.6,
+   "text": "She is not taking new patients right now because her caseload is full."
+  },
+  {
+   "who": "office",
+   "t0": 60.8,
+   "t1": 63.2,
+   "text": "She does take Cascadia Health Plan though."
+  },
+  {
+   "who": "tool",
+   "t0": 64.2,
+   "t1": 64.3,
+   "text": "confirm_fields ✕ refused",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65,
+   "t1": 65.1,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.8,
+   "t1": 65.9,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 66.9,
+   "t1": 67,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 64.4,
+   "t1": 69.2,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is still practicing here.",
+   "at": 24.1,
+   "clip": [
+    19.9,
+    22.3
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "The address is 2203 Pruett St., and yes, the number ending in 0 1 1 9 is the best one for booking.",
+   "at": 44.7,
+   "clip": [
+    36,
+    43.5
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "The address is 2203 Pruett St., and yes, the number ending in 0 1 1 9 is the best one for booking.",
+   "at": 44.7,
+   "clip": [
+    36,
+    43.5
+   ]
+  },
+  "accepting": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "She is not taking new patients right now because her caseload is full. She does take Cascadia Health Plan though.",
+   "at": 65.8,
+   "clip": [
+    60.8,
+    63.2
+   ]
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Thanks for calling Eastbank Counseling Collective, Marisol speaking.",
+  "Yes, she is still practicing here.",
+  "The address is two two zero three Pruett Street. And yes, the number ending in zero one one nine is the best one for booking.",
+  "She is not taking new patients right now because her caseload is full. She does take Cascadia Health Plan though."
+ ],
+ "refusals": [
+  "confirm_fields({\"fields\":[\"inNetwork\"]}): inNetwork is \"Yes\" on file, but the office's answer (\"She is not taking new patients right now because her caseload is full.\") says otherwise. If they clearly said the opposite, call correct_field for inNetwork with value No; if unsure, ask once more."
+ ],
+ "sessions": {
+  "caller": "sess_629a638972e54054b85b14dd71e99c72",
+  "office": "sess_d0bdc20beb094f449434761a7a4b396c"
+ }
+}

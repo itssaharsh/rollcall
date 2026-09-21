@@ -1,0 +1,187 @@
+{
+ "id": "L-029",
+ "kind": "address",
+ "answeredBy": "person",
+ "duration": 69.7,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 4.1,
+   "text": "Saltmarsh Psychology Partners, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 4.1,
+   "t1": 14.7,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Deshpande still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 18.6,
+   "t1": 20.9,
+   "text": "Yes, he is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 22.6,
+   "t1": 22.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 22.8,
+   "t1": 29.6,
+   "text": "Are you still at 33 Tidewater Ave, and is this number, ending 0 1 2 9, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 33.1,
+   "t1": 40.6,
+   "text": "No, we moved in June. We are at 40 Tidewater Avenue, floor 2. And yes, that is the best number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 42.2,
+   "t1": 42.3,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "40 Tidewater Avenue, floor 2"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 43.2,
+   "t1": 43.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 43.4,
+   "t1": 53.3,
+   "text": "Thank you. Last one: is Dr. Deshpande taking new patients, and does Dr. Deshpande still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 57.7,
+   "t1": 62.3,
+   "text": "He is accepting new patients, and he does take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 62.8,
+   "t1": 62.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 64.9,
+   "t1": 65,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 63,
+   "t1": 66.8,
+   "text": "Thank you so much. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is still practicing here.",
+   "at": 22.6,
+   "clip": [
+    18.6,
+    20.9
+   ]
+  },
+  "address": {
+   "status": "corrected",
+   "value": "40 Tidewater Avenue, floor 2",
+   "quote": "No, we moved in June. We are at 40 Tidewater Avenue, floor 2. And yes, that is the best number for booking.",
+   "at": 42.2,
+   "clip": [
+    33.1,
+    40.6
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "No, we moved in June. We are at 40 Tidewater Avenue, floor 2. And yes, that is the best number for booking.",
+   "at": 43.2,
+   "clip": [
+    33.1,
+    40.6
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and he does take Cascadia Health Plan.",
+   "at": 62.8,
+   "clip": [
+    57.7,
+    62.3
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and he does take Cascadia Health Plan.",
+   "at": 62.8,
+   "clip": [
+    57.7,
+    62.3
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Saltmarsh Psychology Partners, how can I help?",
+  "Yes, he is still practicing here.",
+  "No, we moved in June. We are at 40 Tidewater Avenue, Floor 2. And yes, that is the best number for booking.",
+  "He is accepting new patients and he does take Cascadia Health Plan.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_146fdf00667c4bd0b687faea57732a35",
+  "office": "sess_d82bf418a51a4fc9a0ec1b3111b2158d"
+ }
+}

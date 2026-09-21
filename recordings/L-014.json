@@ -1,0 +1,96 @@
+{
+ "id": "L-014",
+ "kind": "retired",
+ "answeredBy": "person",
+ "duration": 35.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.6,
+   "t1": 5,
+   "text": "Good morning, Quarry Heights Psychiatry."
+  },
+  {
+   "who": "agent",
+   "t0": 5,
+   "t1": 17,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Alvarez still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 22.4,
+   "t1": 24.8,
+   "text": "No, Dr. Alvarez retired."
+  },
+  {
+   "who": "tool",
+   "t0": 26.7,
+   "t1": 26.8,
+   "text": "flag_listing",
+   "tool": {
+    "name": "flag_listing",
+    "args": {
+     "reason": "provider_retired"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 27.7,
+   "t1": 27.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 26.9,
+   "t1": 30.1,
+   "text": "Thank you for that information. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "No, Dr. Alvarez retired.",
+   "at": 26.7,
+   "clip": [
+    22.4,
+    24.8
+   ]
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "provider_retired"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Provider retired"
+ },
+ "said": [
+  "Good morning, Quarry Heights Psychiatry.",
+  "No, Dr. Alvarez retired.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_0fcd38b56864479288223ceaead7466e",
+  "office": "sess_c60ee1cc38964fcdb2a62ce7df623266"
+ }
+}

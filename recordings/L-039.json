@@ -1,0 +1,180 @@
+{
+ "id": "L-039",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 63.6,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 3.7,
+   "text": "Good morning, Gristmill Counseling."
+  },
+  {
+   "who": "agent",
+   "t0": 3.7,
+   "t1": 15,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Charlotte Dubois still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.7,
+   "t1": 22.1,
+   "text": "Yes, she still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.9,
+   "t1": 24,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24,
+   "t1": 30.4,
+   "text": "Are you still at 41 Gristmill Ct, and is this number, ending 0 1 3 9, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 33.9,
+   "t1": 35.1,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 35.5,
+   "t1": 38.2,
+   "text": "The address and the number are both right."
+  },
+  {
+   "who": "tool",
+   "t0": 39.2,
+   "t1": 39.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 39.3,
+   "t1": 47.2,
+   "text": "Last one: is Charlotte Dubois taking new patients, and does Charlotte Dubois still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 51.1,
+   "t1": 55.7,
+   "text": "She is accepting new patients, and she takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 56.2,
+   "t1": 56.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 58.3,
+   "t1": 58.4,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 56.4,
+   "t1": 60.6,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she still practices here.",
+   "at": 23.9,
+   "clip": [
+    19.7,
+    22.1
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. The address and the number are both right.",
+   "at": 39.2,
+   "clip": [
+    35.5,
+    38.2
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. The address and the number are both right.",
+   "at": 39.2,
+   "clip": [
+    35.5,
+    38.2
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients, and she takes Cascadia Health Plan.",
+   "at": 56.2,
+   "clip": [
+    51.1,
+    55.7
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients, and she takes Cascadia Health Plan.",
+   "at": 56.2,
+   "clip": [
+    51.1,
+    55.7
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Good morning, Gristmill Counseling.",
+  "Yes, she still practices here.",
+  "That is correct. The address and the number are both right.",
+  "She is accepting new patients and she takes Cascadia Health Plan.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_d3a100247adb47e6ae36747b06fc6866",
+  "office": "sess_b72c8f9a0f9c462b80d867731fd17a08"
+ }
+}

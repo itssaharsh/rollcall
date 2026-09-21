@@ -1,0 +1,179 @@
+{
+ "id": "L-031",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 70.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 4.2,
+   "text": "Thanks for calling Overlook Counseling. Rob speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 4.2,
+   "t1": 15.1,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Folasade Adeyemi still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.6,
+   "t1": 21.9,
+   "text": "Yes, she is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.7,
+   "t1": 23.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.8,
+   "t1": 31.6,
+   "text": "Are you still at 120 Overlook Dr, and is this number, ending 0 1 3 1, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.8,
+   "t1": 37,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.2,
+   "t1": 43.6,
+   "text": "We are still at 120 Overlook Drive and 564-555-0131 is our booking line."
+  },
+  {
+   "who": "tool",
+   "t0": 44.6,
+   "t1": 44.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 44.8,
+   "t1": 53.6,
+   "text": "Last one: is Folasade Adeyemi taking new patients, and does Folasade Adeyemi still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 58.4,
+   "t1": 62.5,
+   "text": "She is accepting new patients and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 63,
+   "t1": 63.1,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.1,
+   "t1": 65.2,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 63.2,
+   "t1": 67.7,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is still practicing here.",
+   "at": 23.7,
+   "clip": [
+    19.6,
+    21.9
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. We are still at 120 Overlook Drive and 564-555-0131 is our booking line.",
+   "at": 44.6,
+   "clip": [
+    37.2,
+    43.6
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. We are still at 120 Overlook Drive and 564-555-0131 is our booking line.",
+   "at": 44.6,
+   "clip": [
+    37.2,
+    43.6
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 63,
+   "clip": [
+    58.4,
+    62.5
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 63,
+   "clip": [
+    58.4,
+    62.5
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Thanks for calling Overlook Counseling, Rob speaking.",
+  "Yes, she is still practicing here.",
+  "That is correct. We are still at 1 2 0 Overlook Drive and 5 6 4 5 5 5 0 1 3 1 is our booking line.",
+  "She is accepting new patients and we do take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_1728e58ec6b643049036c714fe70ac91",
+  "office": "sess_15db9659f6eb4ef6bdb56856fa5e197e"
+ }
+}

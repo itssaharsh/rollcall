@@ -1,0 +1,193 @@
+{
+ "id": "L-021",
+ "kind": "conflict",
+ "answeredBy": "person",
+ "duration": 85.9,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.9,
+   "t1": 4.2,
+   "text": "Good morning, Camacho Couples & Family."
+  },
+  {
+   "who": "agent",
+   "t0": 4.2,
+   "t1": 15.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Beatriz Camacho still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20.2,
+   "t1": 22.5,
+   "text": "Yes, she still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 24.4,
+   "t1": 24.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.5,
+   "t1": 32.4,
+   "text": "Are you still at 516 Larkspur Rd, and is this number, ending 0 1 2 1, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36.5,
+   "t1": 43.6,
+   "text": "That is right, but patients are actually seen at the Larkspur Annex. I think it is 530. And yes, that is the best number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 45.4,
+   "t1": 45.5,
+   "text": "correct_field ✕ refused",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "530 Larkspur Rd"
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 45.5,
+   "t1": 52.3,
+   "text": "I am sorry, I missed that. To make sure I have it right, is the correct address 530 Larkspur Rd?"
+  },
+  {
+   "who": "office",
+   "t0": 57,
+   "t1": 59.6,
+   "text": "I think so, but I am not entirely sure."
+  },
+  {
+   "who": "tool",
+   "t0": 61.2,
+   "t1": 61.3,
+   "text": "mark_unconfirmed",
+   "tool": {
+    "name": "mark_unconfirmed",
+    "args": {
+     "field": "address",
+     "reason": "hedged_answer"
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 61.4,
+   "t1": 70.6,
+   "text": "Understood. Last one: is Beatriz Camacho taking new patients, and does Beatriz Camacho still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 75.1,
+   "t1": 79.8,
+   "text": "Yes, she is accepting new patients and she does take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 80.4,
+   "t1": 80.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 82.4,
+   "t1": 82.5,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 80.5,
+   "t1": 84.7,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she still practices here.",
+   "at": 24.4,
+   "clip": [
+    20.2,
+    22.5
+   ]
+  },
+  "address": {
+   "status": "unconfirmed",
+   "quote": "I think so, but I am not entirely sure.",
+   "at": 61.2,
+   "clip": [
+    57,
+    59.6
+   ]
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes, she is accepting new patients and she does take Cascadia Health Plan.",
+   "at": 80.4,
+   "clip": [
+    75.1,
+    79.8
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes, she is accepting new patients and she does take Cascadia Health Plan.",
+   "at": 80.4,
+   "clip": [
+    75.1,
+    79.8
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "review",
+  "stamp": "Needs a human"
+ },
+ "said": [
+  "Good morning, Camacho Couples & Family.",
+  "Yes, she still practices here.",
+  "That is right, but patients are actually seen at the Larkspur annex, I think it is 5 3 0? And yes, that is the best number for booking.",
+  "I think so, but I am not entirely sure.",
+  "Yes, she is accepting new patients and she does take Cascadia Health Plan."
+ ],
+ "refusals": [
+  "correct_field({\"field\":\"address\",\"value\":\"530 Larkspur Rd\"}): The office's answer for address was hedged (\"That is right, but patients are actually seen at the Larkspur Annex. I think it \"). Do not write it down. Ask once more for a clear yes or no, and if it is still unclear call mark_unconfirmed."
+ ],
+ "sessions": {
+  "caller": "sess_3e37c0bcda004ddcbe8b6c623fd44dbe",
+  "office": "sess_3212adc8084949a8bded933651e020d6"
+ }
+}

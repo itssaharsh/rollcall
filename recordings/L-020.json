@@ -1,0 +1,180 @@
+{
+ "id": "L-020",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 68.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 4.6,
+   "text": "Saltmarsh Community Clinic. This is Aisha."
+  },
+  {
+   "who": "agent",
+   "t0": 4.6,
+   "t1": 15.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Nguyen still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.5,
+   "t1": 20.5,
+   "text": "Yes."
+  },
+  {
+   "who": "office",
+   "t0": 21,
+   "t1": 22.9,
+   "text": "Dr. Nguyen is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 24.5,
+   "t1": 24.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.7,
+   "t1": 31.7,
+   "text": "Are you still at 9 Heron Ln, and is this number, ending 0 1 2 0, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.2,
+   "t1": 41.5,
+   "text": "That is correct. 9 Heron Lane is our address and 5645550120 is our booking number."
+  },
+  {
+   "who": "tool",
+   "t0": 42.7,
+   "t1": 42.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 42.9,
+   "t1": 50.9,
+   "text": "Last one: is Dr. Nguyen taking new patients, and does Dr. Nguyen still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 54.8,
+   "t1": 60,
+   "text": "Yes, Dr. Nguyen is accepting new patients and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 60.4,
+   "t1": 60.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 62.7,
+   "t1": 62.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 60.6,
+   "t1": 64.9,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes. Dr. Nguyen is still practicing here.",
+   "at": 24.5,
+   "clip": [
+    21,
+    22.9
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. 9 Heron Lane is our address and 5645550120 is our booking number.",
+   "at": 42.7,
+   "clip": [
+    35.2,
+    41.5
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. 9 Heron Lane is our address and 5645550120 is our booking number.",
+   "at": 42.7,
+   "clip": [
+    35.2,
+    41.5
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Nguyen is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 60.4,
+   "clip": [
+    54.8,
+    60
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Nguyen is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 60.4,
+   "clip": [
+    54.8,
+    60
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Saltmarsh Community Clinic, this is Aisha.",
+  "Yes, Dr. Nguyen is still practicing here.",
+  "That is correct. Nine Heron Lane is our address and five six four five five five zero one two zero is our booking number.",
+  "Yes, Dr. Nguyen is accepting new patients and we do take Cascadia Health Plan.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_ce61491b1da3484a97d5ea5e62a64792",
+  "office": "sess_00eeec4346ab4338bfa00a800a6258ed"
+ }
+}

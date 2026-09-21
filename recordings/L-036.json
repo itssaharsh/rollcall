@@ -1,0 +1,193 @@
+{
+ "id": "L-036",
+ "kind": "confirmed_hold",
+ "answeredBy": "person",
+ "duration": 71.3,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 4.1,
+   "text": "Quarry Heights Psychology, can you hold please?"
+  },
+  {
+   "who": "agent",
+   "t0": 4.1,
+   "t1": 6.9,
+   "text": "Of course."
+  },
+  {
+   "who": "office",
+   "t0": 11.2,
+   "t1": 13.8,
+   "text": "Thanks for waiting. How can I help you?"
+  },
+  {
+   "who": "agent",
+   "t0": 13.8,
+   "t1": 24.4,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Ashworth still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 28.2,
+   "t1": 29.8,
+   "text": "Yes, she is."
+  },
+  {
+   "who": "tool",
+   "t0": 31.6,
+   "t1": 31.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 31.8,
+   "t1": 39.5,
+   "text": "Are you still at 18 Overlook Dr, Suite 5, and is this number, ending 0 1 3 6, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 43.1,
+   "t1": 44,
+   "text": "That's correct."
+  },
+  {
+   "who": "office",
+   "t0": 44.1,
+   "t1": 48.4,
+   "text": "564-555-0136 is the booking number."
+  },
+  {
+   "who": "tool",
+   "t0": 49.3,
+   "t1": 49.4,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 49.5,
+   "t1": 57.6,
+   "text": "Last one: is Dr. Ashworth taking new patients, and does Dr. Ashworth still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 61.6,
+   "t1": 63,
+   "text": "Yes to both."
+  },
+  {
+   "who": "tool",
+   "t0": 63.9,
+   "t1": 64,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.5,
+   "t1": 65.6,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 64.1,
+   "t1": 68.4,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is.",
+   "at": 31.6,
+   "clip": [
+    28.2,
+    29.8
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. 564-555-0136 is the booking number.",
+   "at": 49.3,
+   "clip": [
+    44.1,
+    48.4
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. 564-555-0136 is the booking number.",
+   "at": 49.3,
+   "clip": [
+    44.1,
+    48.4
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes to both.",
+   "at": 63.9,
+   "clip": [
+    61.6,
+    63
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes to both.",
+   "at": 63.9,
+   "clip": [
+    61.6,
+    63
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Quarry Heights Psychology, can you hold please?",
+  "Thanks for waiting. How can I help you?",
+  "Yes, she is.",
+  "That's correct. 5 6 4 5 5 5 0 1 3 6 is the booking number.",
+  "Yes to both.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_bd2e9e7340f7407bb4669e3efb343ec4",
+  "office": "sess_2c5b705f8e334fee934a76edc242b20c"
+ }
+}

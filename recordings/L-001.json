@@ -1,0 +1,179 @@
+{
+ "id": "L-001",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 72.4,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 2.1,
+   "t1": 4.9,
+   "text": "Thanks for calling Alder Street Counseling. Rob speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 4.9,
+   "t1": 15.9,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Okafor still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20.9,
+   "t1": 23.9,
+   "text": "Yes, Dr. Okafor is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 25.8,
+   "t1": 25.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 26,
+   "t1": 34.2,
+   "text": "Are you still at 412 Alder St, Suite 2, and is this number, ending 0 1 0 1, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 38.6,
+   "t1": 42.2,
+   "text": "That is correct. 412 Alder Street, Suite 2."
+  },
+  {
+   "who": "office",
+   "t0": 42.6,
+   "t1": 46,
+   "text": "And yes, the number ending in 0101 is for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 47.1,
+   "t1": 47.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 47.2,
+   "t1": 55.3,
+   "text": "Last one: is Dr. Okafor taking new patients, and does Dr. Okafor still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 60.1,
+   "t1": 65.2,
+   "text": "Yes, Dr. Okafor is accepting new patients, and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 65.8,
+   "t1": 65.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 67.8,
+   "t1": 67.9,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 65.9,
+   "t1": 70.1,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Okafor is still practicing here.",
+   "at": 25.8,
+   "clip": [
+    20.9,
+    23.9
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. 412 Alder Street, Suite 2. And yes, the number ending in 0101 is for booking.",
+   "at": 47.1,
+   "clip": [
+    42.6,
+    46
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. 412 Alder Street, Suite 2. And yes, the number ending in 0101 is for booking.",
+   "at": 47.1,
+   "clip": [
+    42.6,
+    46
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Okafor is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 65.8,
+   "clip": [
+    60.1,
+    65.2
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Okafor is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 65.8,
+   "clip": [
+    60.1,
+    65.2
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Thanks for calling Alder Street Counseling, Rob speaking.",
+  "Yes, Dr. Okafor is still practicing here.",
+  "That is correct. 4 1 2 Alder Street, Suite 2. And yes, the number ending in 0 1 0 1 is for booking.",
+  "Yes, Dr. Okafor is accepting new patients and we do take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_8fe2d12bbdf2453c948ef7e9700646cb",
+  "office": "sess_9a223f841dcb472fa4286e1dc3b41b7b"
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "id": "L-034",
+ "kind": "disconnected",
+ "answeredBy": "intercept",
+ "duration": 16.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.7,
+   "t1": 6.5,
+   "text": "The number you have dialed is not in service. Please check the number and try again."
+  },
+  {
+   "who": "tool",
+   "t0": 8.1,
+   "t1": 8.2,
+   "text": "flag_wrong_number",
+   "tool": {
+    "name": "flag_wrong_number",
+    "args": {
+     "reached": "not in service"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 10.1,
+   "t1": 10.2,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 8.2,
+   "t1": 13.9,
+   "text": "I apologize for the inconvenience. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "not_asked"
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "wrong_number"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Number disconnected"
+ },
+ "said": [
+  "The number you have dialed is not in service. Please check the number and try again."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_a6d79bb241fc422d9f74470776fcecf4",
+  "office": "sess_57464346a1344818b4d11d3c3ce33265"
+ }
+}

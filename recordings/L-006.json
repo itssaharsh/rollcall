@@ -1,0 +1,174 @@
+{
+ "id": "L-006",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 66.3,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 4.2,
+   "text": "Quarry Heights Psychology, this is Glenn."
+  },
+  {
+   "who": "agent",
+   "t0": 4.2,
+   "t1": 15.2,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Bellweather still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.6,
+   "t1": 21.8,
+   "text": "Yes, she still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.7,
+   "t1": 23.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.8,
+   "t1": 32,
+   "text": "Are you still at 18 Overlook Dr, Suite 5, and is this number, ending 0 1 0 6, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36.3,
+   "t1": 39.2,
+   "text": "That is correct. That is our booking number."
+  },
+  {
+   "who": "tool",
+   "t0": 40.5,
+   "t1": 40.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 40.6,
+   "t1": 48.2,
+   "text": "Last one: is Dr. Bellweather taking new patients, and does Dr. Bellweather still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 52.7,
+   "t1": 57.7,
+   "text": "She is accepting new patients. We still take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 58.2,
+   "t1": 58.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 60.3,
+   "t1": 60.4,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 58.4,
+   "t1": 63.3,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she still practices here.",
+   "at": 23.7,
+   "clip": [
+    19.6,
+    21.8
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. That is our booking number.",
+   "at": 40.5,
+   "clip": [
+    36.3,
+    39.2
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. That is our booking number.",
+   "at": 40.5,
+   "clip": [
+    36.3,
+    39.2
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients. We still take Cascadia Health Plan.",
+   "at": 58.2,
+   "clip": [
+    52.7,
+    57.7
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients. We still take Cascadia Health Plan.",
+   "at": 58.2,
+   "clip": [
+    52.7,
+    57.7
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Quarry Heights Psychology, this is Glenn.",
+  "Yes, she still practices here.",
+  "That is correct. That is our booking number.",
+  "She is accepting new patients. We still take Cascadia Health Plan.",
+  "You are welcome. Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_6a571f9d251e43b8b18111c3e51b7b8a",
+  "office": "sess_e08ca7696e0a4eb7a4d56fd7e0df0d8f"
+ }
+}

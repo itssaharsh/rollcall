@@ -1,0 +1,211 @@
+{
+ "id": "L-009",
+ "kind": "evasive",
+ "answeredBy": "person",
+ "duration": 84.5,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.5,
+   "t1": 4.8,
+   "text": "Northgate Psychiatry Associates, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 5,
+   "t1": 16.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Mehta still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 21.1,
+   "t1": 23.8,
+   "text": "Yes, he is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 25.8,
+   "t1": 25.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 26,
+   "t1": 36.1,
+   "text": "Are you still at 1180 Kestrel Ave, Suite 300, and is this number, ending 0 1 0 9, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 40.5,
+   "t1": 48.6,
+   "text": "That's correct. We are at 1180 Kestrel Avenue, Suite 300. And yes, that's the number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 49.8,
+   "t1": 49.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 50,
+   "t1": 59.2,
+   "text": "Last one: is Dr. Mehta taking new patients, and does Dr. Mehta still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 64,
+   "t1": 64.9,
+   "text": "I think so."
+  },
+  {
+   "who": "office",
+   "t0": 65.3,
+   "t1": 68.3,
+   "text": "You would have to ask the doctor about new patients."
+  },
+  {
+   "who": "office",
+   "t0": 68.4,
+   "t1": 71.3,
+   "text": "We do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 72.3,
+   "t1": 72.4,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 72.8,
+   "t1": 72.9,
+   "text": "mark_unconfirmed",
+   "tool": {
+    "name": "mark_unconfirmed",
+    "args": {
+     "field": "accepting",
+     "reason": "hedged_answer"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 74.2,
+   "t1": 74.3,
+   "text": "mark_unconfirmed",
+   "tool": {
+    "name": "mark_unconfirmed",
+    "args": {
+     "field": "accepting",
+     "reason": "hedged_answer"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 75.4,
+   "t1": 75.5,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 72.4,
+   "t1": 77.8,
+   "text": "Thank you for your help. Have a great day!"
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is still practicing here.",
+   "at": 25.8,
+   "clip": [
+    21.1,
+    23.8
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. We are at 1180 Kestrel Avenue, Suite 300. And yes, that's the number for booking.",
+   "at": 49.8,
+   "clip": [
+    40.5,
+    48.6
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. We are at 1180 Kestrel Avenue, Suite 300. And yes, that's the number for booking.",
+   "at": 49.8,
+   "clip": [
+    40.5,
+    48.6
+   ]
+  },
+  "accepting": {
+   "status": "unconfirmed",
+   "quote": "You would have to ask the doctor about new patients.",
+   "at": 74.2,
+   "clip": [
+    65.3,
+    68.3
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "We do take Cascadia Health Plan.",
+   "at": 72.3,
+   "clip": [
+    68.4,
+    71.3
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "review",
+  "stamp": "Needs a human"
+ },
+ "said": [
+  "Northgate Psychiatry Associates, how can I help?",
+  "Yes, he is still practicing here.",
+  "That's correct. We are at 1 1 8 0 Kestrel Avenue, Suite 3 0 0. And yes, that's the number for booking.",
+  "I think so? You would have to ask the doctor about new patients. We do take Cascadia Health Plan.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_69304761b223465291a0d3d26dc72274",
+  "office": "sess_24db8af2ea4d4d0d8a662292fcf64481"
+ }
+}

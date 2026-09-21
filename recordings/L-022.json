@@ -1,0 +1,75 @@
+{
+ "id": "L-022",
+ "kind": "wrong_number",
+ "answeredBy": "wrong_number",
+ "duration": 14.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.7,
+   "t1": 4,
+   "text": "Tony's Pizza, pickup or delivery?"
+  },
+  {
+   "who": "tool",
+   "t0": 5.6,
+   "t1": 5.7,
+   "text": "flag_wrong_number",
+   "tool": {
+    "name": "flag_wrong_number",
+    "args": {
+     "reached": "Tony's Pizza"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 7.7,
+   "t1": 7.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 5.8,
+   "t1": 11.2,
+   "text": "I am sorry, I must have the wrong number. Thank you."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "not_asked"
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "wrong_number"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Wrong number"
+ },
+ "said": [
+  "Tony's Pizza, pickup or delivery?"
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_9e81855bb23c46cb946d944fabc1e651",
+  "office": "sess_189479ff7f0b40ad9a61d71b98e2da06"
+ }
+}

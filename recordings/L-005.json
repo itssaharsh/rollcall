@@ -1,0 +1,95 @@
+{
+ "id": "L-005",
+ "kind": "left",
+ "answeredBy": "person",
+ "duration": 25.9,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.5,
+   "t1": 3.8,
+   "text": "Tamarack Wellness Group, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.8,
+   "t1": 14.3,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Grace Oyelaran still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 18.3,
+   "t1": 20.6,
+   "text": "No, she doesn't practice here anymore."
+  },
+  {
+   "who": "office",
+   "t0": 20.7,
+   "t1": 23.1,
+   "text": "I actually have no idea where she went."
+  },
+  {
+   "who": "tool",
+   "t0": 24.5,
+   "t1": 24.6,
+   "text": "flag_listing",
+   "tool": {
+    "name": "flag_listing",
+    "args": {
+     "reason": "left_practice"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 25.6,
+   "t1": 25.7,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "I actually have no idea where she went.",
+   "at": 24.5,
+   "clip": [
+    20.7,
+    23.1
+   ]
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "left_practice"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Left the practice"
+ },
+ "said": [
+  "Tamarack Wellness Group, how can I help?",
+  "No, she doesn't practice here anymore. I actually have no idea where she went."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_b60c1ae2af3d4ea49987ea0e75974bef",
+  "office": "sess_62034a2d0a184343977bec171a5afce6"
+ }
+}

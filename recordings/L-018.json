@@ -1,0 +1,173 @@
+{
+ "id": "L-018",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 64.9,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.2,
+   "t1": 4.2,
+   "text": "Thanks for calling Feldman Psychological. Bev speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 4.2,
+   "t1": 15.2,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Feldman still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.1,
+   "t1": 22,
+   "text": "Yes, Dr. Feldman is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.8,
+   "t1": 23.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.9,
+   "t1": 31.7,
+   "text": "Are you still at 15 Gristmill Ct, and is this number, ending 0 1 1 8, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.6,
+   "t1": 36.7,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.1,
+   "t1": 44.4,
+   "text": "15 Gristmill Court is our address and 564-555-0118 is the best number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 45.4,
+   "t1": 45.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 45.5,
+   "t1": 53.2,
+   "text": "Last one: is Dr. Feldman taking new patients, and does Dr. Feldman still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 57.2,
+   "t1": 62.3,
+   "text": "Yes, the doctor is accepting new patients and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 62.8,
+   "t1": 62.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 64.9,
+   "t1": 65,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Feldman is still practicing here.",
+   "at": 23.8,
+   "clip": [
+    19.1,
+    22
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. 15 Gristmill Court is our address and 564-555-0118 is the best number for booking.",
+   "at": 45.4,
+   "clip": [
+    37.1,
+    44.4
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. 15 Gristmill Court is our address and 564-555-0118 is the best number for booking.",
+   "at": 45.4,
+   "clip": [
+    37.1,
+    44.4
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes, the doctor is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 62.8,
+   "clip": [
+    57.2,
+    62.3
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes, the doctor is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 62.8,
+   "clip": [
+    57.2,
+    62.3
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Thanks for calling Feldman Psychological, Bev speaking.",
+  "Yes, Dr. Feldman is still practicing here.",
+  "That is correct. 15 Gristmill Court is our address and five six four five five five zero one one eight is the best number for booking.",
+  "Yes, the doctor is accepting new patients and we do take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_7a938167a6254cbcb572aded6385ea73",
+  "office": "sess_86b5a766c84a43f5b8f3c60df3ddec33"
+ }
+}

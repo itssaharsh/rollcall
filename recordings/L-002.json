@@ -1,0 +1,185 @@
+{
+ "id": "L-002",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 71.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.6,
+   "t1": 4.4,
+   "text": "Harborlight Behavioral Health. This is Glenn."
+  },
+  {
+   "who": "agent",
+   "t0": 4.4,
+   "t1": 15.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Daniel Reyes-Whitlock still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20,
+   "t1": 22,
+   "text": "Yes, he still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.8,
+   "t1": 23.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24,
+   "t1": 31.3,
+   "text": "Are you still at 75 Wharf Rd, and is this number, ending 0 1 0 2, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.4,
+   "t1": 36.2,
+   "text": "That's correct."
+  },
+  {
+   "who": "office",
+   "t0": 36.3,
+   "t1": 43.7,
+   "text": "We are at 75 Wharf Rd. And yes, 564-555-0102 is the best number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 44.5,
+   "t1": 44.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 44.8,
+   "t1": 53.3,
+   "text": "Last one: is Daniel Reyes-Whitlock taking new patients, and does Daniel Reyes-Whitlock still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 58.2,
+   "t1": 60.1,
+   "text": "He is accepting new patients."
+  },
+  {
+   "who": "office",
+   "t0": 60.3,
+   "t1": 63.3,
+   "text": "And yes, he still takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 63.9,
+   "t1": 64,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.9,
+   "t1": 66,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 64.1,
+   "t1": 68.6,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he still practices here.",
+   "at": 23.8,
+   "clip": [
+    20,
+    22
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. We are at 75 Wharf Rd. And yes, 564-555-0102 is the best number for booking.",
+   "at": 44.5,
+   "clip": [
+    36.3,
+    43.7
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. We are at 75 Wharf Rd. And yes, 564-555-0102 is the best number for booking.",
+   "at": 44.5,
+   "clip": [
+    36.3,
+    43.7
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients. And yes, he still takes Cascadia Health Plan.",
+   "at": 63.9,
+   "clip": [
+    60.3,
+    63.3
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients. And yes, he still takes Cascadia Health Plan.",
+   "at": 63.9,
+   "clip": [
+    60.3,
+    63.3
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Harborlight Behavioral Health, this is Glenn.",
+  "Yes, he still practices here.",
+  "That's correct. We are at 7 5 Wharf Road. And yes, 5 6 4 5 5 5 0 1 0 2 is the best number for booking.",
+  "He is accepting new patients. And yes, he still takes Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_d3310d43ec754df0b6520334238550f1",
+  "office": "sess_3b01a49d3dac4e0ea95a7f7a0269737d"
+ }
+}

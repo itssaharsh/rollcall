@@ -1,0 +1,199 @@
+{
+ "id": "L-017",
+ "kind": "address_accepting",
+ "answeredBy": "person",
+ "duration": 80.5,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.7,
+   "t1": 5.3,
+   "text": "Thanks for calling Tamarack Wellness Group. Nadia speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 5.3,
+   "t1": 16.1,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Elena Petrova still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.9,
+   "t1": 22.2,
+   "text": "Yes, she is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 24.1,
+   "t1": 24.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.2,
+   "t1": 32,
+   "text": "Are you still at 640 Tamarack Way, and is this number, ending 0 1 1 7, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36,
+   "t1": 42.1,
+   "text": "No, we moved to 655 Tamarack Way, Suite 12. And yes, that number is correct for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 43.7,
+   "t1": 43.8,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "655 Tamarack Way, Suite 12"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 44.8,
+   "t1": 44.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 45,
+   "t1": 60.6,
+   "text": "I have updated that. Just to confirm, I have the new address as 655 Tamarack Way, Suite 12. Last one: is Elena Petrova taking new patients, and does Elena Petrova still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 65.5,
+   "t1": 70.7,
+   "text": "She is not accepting new patients right now, but she does take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 71.9,
+   "t1": 72,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 73.3,
+   "t1": 73.4,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 74.6,
+   "t1": 74.7,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 73.4,
+   "t1": 77.2,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is still practicing here.",
+   "at": 24.1,
+   "clip": [
+    19.9,
+    22.2
+   ]
+  },
+  "address": {
+   "status": "corrected",
+   "value": "655 Tamarack Way, Suite 12",
+   "quote": "No, we moved to 655 Tamarack Way, Suite 12. And yes, that number is correct for booking.",
+   "at": 43.7,
+   "clip": [
+    36,
+    42.1
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "No, we moved to 655 Tamarack Way, Suite 12. And yes, that number is correct for booking.",
+   "at": 44.8,
+   "clip": [
+    36,
+    42.1
+   ]
+  },
+  "accepting": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "She is not accepting new patients right now, but she does take Cascadia Health Plan.",
+   "at": 71.9,
+   "clip": [
+    65.5,
+    70.7
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is not accepting new patients right now, but she does take Cascadia Health Plan.",
+   "at": 73.3,
+   "clip": [
+    65.5,
+    70.7
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·2"
+ },
+ "said": [
+  "Thanks for calling Tamarack Wellness Group, Nadia speaking.",
+  "Yes, she is still practicing here.",
+  "No, we moved to 6 5 5 Tamarack Way, Suite 1 2. And yes, that number is correct for booking.",
+  "She is not accepting new patients right now. But she does take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_f18c27b68e494e188bca373359e47ac2",
+  "office": "sess_5f9a815b9e3e4f7999795d441baf0d95"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "scoredAt": "2026-09-21T17:30:19.494Z",
+ "calls": 40,
+ "fieldsWritten": 150,
+ "fieldsRight": 150,
+ "falseWrites": 0,
+ "outcomesRight": 40,
+ "gateRefusals": 5,
+ "avgCallSeconds": 61.8,
+ "costPerListing": 0.077
+}

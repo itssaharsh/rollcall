@@ -1,0 +1,179 @@
+{
+ "id": "L-015",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 67.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 3.6,
+   "text": "Old Mill Family Therapy, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.6,
+   "t1": 13.4,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Sinéad Byrne still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 17.7,
+   "t1": 20,
+   "text": "Yes, she's still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 22.5,
+   "t1": 22.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 22.8,
+   "t1": 30.2,
+   "text": "Are you still at 29 Foundry Rd, and is this number, ending 0 1 1 5, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36.1,
+   "t1": 37,
+   "text": "That's correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.3,
+   "t1": 41.6,
+   "text": "We're still at 29 Foundry Rd, and that number is the best one for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 42.1,
+   "t1": 42.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 42.3,
+   "t1": 50.7,
+   "text": "Last one: is Sinéad Byrne taking new patients, and does Sinéad Byrne still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 55.5,
+   "t1": 60.1,
+   "text": "She is accepting new patients and she takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 60.6,
+   "t1": 60.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 62.7,
+   "t1": 62.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 60.8,
+   "t1": 65.4,
+   "text": "Thank you so much for your help. Have a great day."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she's still practicing here.",
+   "at": 22.5,
+   "clip": [
+    17.7,
+    20
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. We're still at 29 Foundry Rd, and that number is the best one for booking.",
+   "at": 42.1,
+   "clip": [
+    37.3,
+    41.6
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. We're still at 29 Foundry Rd, and that number is the best one for booking.",
+   "at": 42.1,
+   "clip": [
+    37.3,
+    41.6
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and she takes Cascadia Health Plan.",
+   "at": 60.6,
+   "clip": [
+    55.5,
+    60.1
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and she takes Cascadia Health Plan.",
+   "at": 60.6,
+   "clip": [
+    55.5,
+    60.1
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Old Mill Family Therapy, how can I help?",
+  "Yes, she's still practicing here.",
+  "That's correct. We're still at 29 Foundry Road and that number is the best one for booking.",
+  "She is accepting new patients and she takes Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_c6a0fdacb6914542ad2b929a27d42ede",
+  "office": "sess_dccc0b4fafcd4e50a5ad2f73b9c00b5c"
+ }
+}

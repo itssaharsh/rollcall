@@ -1,0 +1,95 @@
+{
+ "id": "L-025",
+ "kind": "retired",
+ "answeredBy": "person",
+ "duration": 28.2,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 4.5,
+   "text": "Thanks for calling Abernathy Psychology. Trevor speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 4.5,
+   "t1": 15.7,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Abernathy still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.9,
+   "t1": 21.7,
+   "text": "No, he retired."
+  },
+  {
+   "who": "tool",
+   "t0": 23.4,
+   "t1": 23.5,
+   "text": "flag_listing",
+   "tool": {
+    "name": "flag_listing",
+    "args": {
+     "reason": "provider_retired"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 24.2,
+   "t1": 24.3,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.5,
+   "t1": 26.1,
+   "text": "Thank you for that information. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "No, he retired.",
+   "at": 23.4,
+   "clip": [
+    19.9,
+    21.7
+   ]
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "provider_retired"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Provider retired"
+ },
+ "said": [
+  "Thanks for calling Abernathy Psychology, Trevor speaking.",
+  "No, he retired."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_7435303c2836468194798e494b51b6a7",
+  "office": "sess_7a2ff003640b41b1bb34c8253761a53c"
+ }
+}

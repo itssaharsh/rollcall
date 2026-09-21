@@ -1,0 +1,95 @@
+{
+ "id": "L-032",
+ "kind": "manager",
+ "answeredBy": "person",
+ "duration": 40.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 4,
+   "text": "Good morning, Lindgren Psychology."
+  },
+  {
+   "who": "agent",
+   "t0": 4,
+   "t1": 15,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Lindgren still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.3,
+   "t1": 22.1,
+   "text": "I am actually just covering the desk today."
+  },
+  {
+   "who": "office",
+   "t0": 22.2,
+   "t1": 28.8,
+   "text": "I cannot answer anything about the listing. You will need to call back Tuesday after 2 and ask for the office manager."
+  },
+  {
+   "who": "tool",
+   "t0": 29.7,
+   "t1": 29.8,
+   "text": "schedule_callback",
+   "tool": {
+    "name": "schedule_callback",
+    "args": {
+     "ask_for": "office manager",
+     "when": "Tuesday after 2"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 31.4,
+   "t1": 31.5,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 29.9,
+   "t1": 37,
+   "text": "Thank you. I will try again Tuesday after two and ask for the office manager. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "not_asked"
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "callback"
+ ],
+ "outcome": {
+  "outcome": "review",
+  "stamp": "Needs a human"
+ },
+ "said": [
+  "Good morning, Lindgren Psychology.",
+  "I am actually just covering the desk today. I cannot answer anything about the listing. You will need to call back Tuesday after two and ask for the office manager.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_a5e19d9c979645ee84c3d9ef356a0500",
+  "office": "sess_bdae79d77af943f1bc5bf85ce9a2b581"
+ }
+}

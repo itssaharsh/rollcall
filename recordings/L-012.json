@@ -1,0 +1,196 @@
+{
+ "id": "L-012",
+ "kind": "accepting_no",
+ "answeredBy": "person",
+ "duration": 64.1,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.9,
+   "t1": 5,
+   "text": "Thanks for calling Eastbank Mind & Mood Clinic. Trevor speaking."
+  },
+  {
+   "who": "agent",
+   "t0": 5,
+   "t1": 16.5,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Zhou still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20.2,
+   "t1": 21.7,
+   "text": "Yes, he is."
+  },
+  {
+   "who": "tool",
+   "t0": 23.6,
+   "t1": 23.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.7,
+   "t1": 34.1,
+   "text": "Are you still at 1412 Varnum Blvd, Suite 210, and is this number, ending 0 1 1 2, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 34.7,
+   "t1": 35.2,
+   "text": "That's correct."
+  },
+  {
+   "who": "tool",
+   "t0": 36.4,
+   "t1": 36.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 36.6,
+   "t1": 44.3,
+   "text": "Last one: is Dr. Zhou taking new patients, and does Dr. Zhou still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 49.8,
+   "t1": 56.2,
+   "text": "He is not taking new patients because his schedule is completely full right now. He does take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 56.8,
+   "t1": 56.9,
+   "text": "confirm_fields ✕ refused",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 57.4,
+   "t1": 57.5,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 58.9,
+   "t1": 59,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 59.5,
+   "t1": 59.6,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 56.9,
+   "t1": 62.1,
+   "text": "Thank you for that information. Have a great day."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is.",
+   "at": 23.6,
+   "clip": [
+    20.2,
+    21.7
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct.",
+   "at": 36.4,
+   "clip": [
+    34.7,
+    35.2
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct.",
+   "at": 36.4,
+   "clip": [
+    34.7,
+    35.2
+   ]
+  },
+  "accepting": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "He is not taking new patients because his schedule is completely full right now. He does take Cascadia Health Plan.",
+   "at": 58.9,
+   "clip": [
+    49.8,
+    56.2
+   ]
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Thanks for calling Eastbank Mind & Mood Clinic, Trevor speaking.",
+  "Yes, he is.",
+  "That's correct.",
+  "Yes,",
+  "He is not taking new patients because his schedule is completely full right now. He does take Cascadia Health Plan."
+ ],
+ "refusals": [
+  "confirm_fields({\"fields\":[\"inNetwork\"]}): inNetwork is \"Yes\" on file, but the office's answer (\"He is not taking new patients because his schedule is completely full \") says otherwise. If they clearly said the opposite, call correct_field for inNetwork with value No; if unsure, ask once more."
+ ],
+ "sessions": {
+  "caller": "sess_f35c0615b9e44f80986965e82a980f2c",
+  "office": "sess_5e138d8075d44e2ea0efc5860973e662"
+ }
+}

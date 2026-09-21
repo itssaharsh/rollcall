@@ -1,0 +1,213 @@
+{
+ "id": "L-003",
+ "kind": "accepting_no",
+ "answeredBy": "person",
+ "duration": 67.3,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 3.3,
+   "text": "Northgate Psychiatry Associates."
+  },
+  {
+   "who": "office",
+   "t0": 3.4,
+   "t1": 5,
+   "text": "This is Nadia."
+  },
+  {
+   "who": "agent",
+   "t0": 3.3,
+   "t1": 15.9,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Venkataraman still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.9,
+   "t1": 21,
+   "text": "Yes, he is."
+  },
+  {
+   "who": "tool",
+   "t0": 22.9,
+   "t1": 23,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23,
+   "t1": 31.9,
+   "text": "Are you still at 1180 Kestrel Ave, Suite 300, and is this number, ending 0 1 0 3, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36,
+   "t1": 37,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.5,
+   "t1": 38.9,
+   "text": "Address and number are both right."
+  },
+  {
+   "who": "tool",
+   "t0": 40,
+   "t1": 40.1,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 40.1,
+   "t1": 49.4,
+   "text": "Last one: is Dr. Venkataraman taking new patients, and does Dr. Venkataraman still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 54,
+   "t1": 57.1,
+   "text": "No, he is not taking new patients because his caseload is full."
+  },
+  {
+   "who": "office",
+   "t0": 57.5,
+   "t1": 60,
+   "text": "He does take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 61,
+   "t1": 61.1,
+   "text": "confirm_fields ✕ refused",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 61.4,
+   "t1": 61.5,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 62.7,
+   "t1": 62.8,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "No"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 63.7,
+   "t1": 63.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 61.1,
+   "t1": 66.7,
+   "text": "Thank you. I have updated those details. Thank you for your help, goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is.",
+   "at": 22.9,
+   "clip": [
+    19.9,
+    21
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. Address and number are both right.",
+   "at": 40,
+   "clip": [
+    37.5,
+    38.9
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. Address and number are both right.",
+   "at": 40,
+   "clip": [
+    37.5,
+    38.9
+   ]
+  },
+  "accepting": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "No, he is not taking new patients because his caseload is full. He does take Cascadia Health Plan.",
+   "at": 62.7,
+   "clip": [
+    57.5,
+    60
+   ]
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Northgate Psychiatry Associates, this is Nadia.",
+  "Yes, he is.",
+  "That is correct. The address and number are both right.",
+  "No, he is not taking new patients because his caseload is full. He does take Cascadia Health Plan."
+ ],
+ "refusals": [
+  "confirm_fields({\"fields\":[\"inNetwork\"]}): inNetwork is \"Yes\" on file, but the office's answer (\"No, he is not taking new patients because his caseload is full. He doe\") says otherwise. If they clearly said the opposite, call correct_field for inNetwork with value No; if unsure, ask once more."
+ ],
+ "sessions": {
+  "caller": "sess_b2fc4290af6642e797b28a49d52cea7a",
+  "office": "sess_c66e7254e9094c9bae308c5a2c857bac"
+ }
+}

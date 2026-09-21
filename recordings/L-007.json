@@ -1,0 +1,199 @@
+{
+ "id": "L-007",
+ "kind": "address",
+ "answeredBy": "person",
+ "duration": 74.3,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 4.1,
+   "text": "Eastbank Counseling Collective, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 4.1,
+   "t1": 14.3,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Lucía Ferreira still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.3,
+   "t1": 21.7,
+   "text": "Yes, she is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.5,
+   "t1": 23.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.7,
+   "t1": 31.9,
+   "text": "Are you still at 2203 Pruett St, and is this number, ending 0 1 0 7, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 37,
+   "t1": 39.2,
+   "text": "No, we moved in June."
+  },
+  {
+   "who": "office",
+   "t0": 39.1,
+   "t1": 45.5,
+   "text": "We are at 2310 Pruett Street, Suite 1, and yes, that number is the right one for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 47.1,
+   "t1": 47.2,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "2310 Pruett Street, Suite 1"
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 47.2,
+   "t1": 48.1,
+   "text": "Where are you located now?"
+  },
+  {
+   "who": "tool",
+   "t0": 48.1,
+   "t1": 48.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 48.3,
+   "t1": 57.5,
+   "text": "Thank you. Last one: is Lucía Ferreira taking new patients, and does Lucía Ferreira still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 61.8,
+   "t1": 66.2,
+   "text": "She is accepting new patients, and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 66.7,
+   "t1": 66.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 68.7,
+   "t1": 68.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 66.8,
+   "t1": 71.4,
+   "text": "Thank you so much for your help. Have a great day."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is still practicing here.",
+   "at": 23.5,
+   "clip": [
+    19.3,
+    21.7
+   ]
+  },
+  "address": {
+   "status": "corrected",
+   "value": "2310 Pruett Street, Suite 1",
+   "quote": "No, we moved in June. We are at 2310 Pruett Street, Suite 1, and yes, that number is the right one for booking.",
+   "at": 47.1,
+   "clip": [
+    39.1,
+    45.5
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "No, we moved in June. We are at 2310 Pruett Street, Suite 1, and yes, that number is the right one for booking.",
+   "at": 48.1,
+   "clip": [
+    39.1,
+    45.5
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 66.7,
+   "clip": [
+    61.8,
+    66.2
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 66.7,
+   "clip": [
+    61.8,
+    66.2
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Eastbank Counseling Collective, how can I help?",
+  "Yes, she is still practicing here.",
+  "No, we moved in June. We are at 2 3 1 0 Pruett Street, Suite 1. And yes, that number is the right one for booking.",
+  "She is accepting new patients and we do take Cascadia Health Plan.",
+  "You too. Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_145cd7a9fdd3470d8b4acc1c1f180a96",
+  "office": "sess_99bf0e72298a408abd733b2108446d9b"
+ }
+}

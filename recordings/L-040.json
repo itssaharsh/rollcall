@@ -1,0 +1,173 @@
+{
+ "id": "L-040",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 62.7,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.2,
+   "t1": 3.5,
+   "text": "Good morning, Thornbury & Associates."
+  },
+  {
+   "who": "agent",
+   "t0": 3.5,
+   "t1": 14.6,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Thornbury still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 18.5,
+   "t1": 20.9,
+   "text": "Yes, he still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 22.7,
+   "t1": 22.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 22.8,
+   "t1": 31.7,
+   "text": "Are you still at 266 Sycamore St, Suite 9, and is this number, ending 0 1 4 0, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 35.6,
+   "t1": 36.7,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 36.8,
+   "t1": 41.5,
+   "text": "The booking number is 564-555-0140."
+  },
+  {
+   "who": "tool",
+   "t0": 42.5,
+   "t1": 42.6,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 42.6,
+   "t1": 51.6,
+   "text": "Last one: is Dr. Thornbury taking new patients, and does Dr. Thornbury still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 55.3,
+   "t1": 60.1,
+   "text": "He is accepting new patients, and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 60.6,
+   "t1": 60.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 62.7,
+   "t1": 62.8,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he still practices here.",
+   "at": 22.7,
+   "clip": [
+    18.5,
+    20.9
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. The booking number is 564-555-0140.",
+   "at": 42.5,
+   "clip": [
+    36.8,
+    41.5
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. The booking number is 564-555-0140.",
+   "at": 42.5,
+   "clip": [
+    36.8,
+    41.5
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 60.6,
+   "clip": [
+    55.3,
+    60.1
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is accepting new patients, and we do take Cascadia Health Plan.",
+   "at": 60.6,
+   "clip": [
+    55.3,
+    60.1
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Good morning, Thornbury & Associates.",
+  "Yes, he still practices here.",
+  "That is correct. The booking number is 5 6 4 5 5 5 0 1 4 0.",
+  "He is accepting new patients and we do take Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_e6059a4663104b32a0dfeed0fa8b1b7f",
+  "office": "sess_398bddb97ad343088f7be6264da0b66b"
+ }
+}

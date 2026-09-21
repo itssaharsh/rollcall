@@ -1,0 +1,95 @@
+{
+ "id": "L-030",
+ "kind": "left",
+ "answeredBy": "person",
+ "duration": 28.9,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.1,
+   "t1": 3.5,
+   "text": "Kestrel Behavioral Medicine, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.5,
+   "t1": 14.9,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Viktor Novak still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 18.6,
+   "t1": 21.7,
+   "text": "No, Viktor Novak does not practice here anymore."
+  },
+  {
+   "who": "office",
+   "t0": 22.1,
+   "t1": 23.6,
+   "text": "I actually don't know where he went."
+  },
+  {
+   "who": "tool",
+   "t0": 25,
+   "t1": 25.1,
+   "text": "flag_listing",
+   "tool": {
+    "name": "flag_listing",
+    "args": {
+     "reason": "left_practice"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 26.2,
+   "t1": 26.3,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "I actually don't know where he went.",
+   "at": 25,
+   "clip": [
+    22.1,
+    23.6
+   ]
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "left_practice"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Left the practice"
+ },
+ "said": [
+  "Kestrel Behavioral Medicine, how can I help?",
+  "No, Victor Novak does not practice here anymore. I actually don't know where he went."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_1e45ac8d480545f391687a9e0520ce58",
+  "office": "sess_e87107e1ab7247f698ec1d8a2e08360b"
+ }
+}

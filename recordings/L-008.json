@@ -1,0 +1,186 @@
+{
+ "id": "L-008",
+ "kind": "confirmed",
+ "answeredBy": "person",
+ "duration": 70.8,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 3.3,
+   "text": "Saltmarsh Community Clinic."
+  },
+  {
+   "who": "office",
+   "t0": 3.4,
+   "t1": 4.6,
+   "text": "How can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.3,
+   "t1": 16.1,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Hannah Lindqvist still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20.2,
+   "t1": 22.5,
+   "text": "Yes, she is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 24.4,
+   "t1": 24.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.5,
+   "t1": 32,
+   "text": "Are you still at 9 Heron Ln, and is this number, ending 0 1 0 8, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36.3,
+   "t1": 37.5,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 37.6,
+   "t1": 44.1,
+   "text": "We are at 9 Heron Lane, and 564-555-0108 is the number for bookings."
+  },
+  {
+   "who": "tool",
+   "t0": 45.2,
+   "t1": 45.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 45.3,
+   "t1": 54.4,
+   "text": "Last one: is Hannah Lindqvist taking new patients, and does Hannah Lindqvist still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 58.4,
+   "t1": 62.8,
+   "text": "She is accepting new patients and she takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 63.4,
+   "t1": 63.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 65.5,
+   "t1": 65.6,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 63.5,
+   "t1": 67.8,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she is still practicing here.",
+   "at": 24.4,
+   "clip": [
+    20.2,
+    22.5
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. We are at 9 Heron Lane, and 564-555-0108 is the number for bookings.",
+   "at": 45.2,
+   "clip": [
+    37.6,
+    44.1
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. We are at 9 Heron Lane, and 564-555-0108 is the number for bookings.",
+   "at": 45.2,
+   "clip": [
+    37.6,
+    44.1
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and she takes Cascadia Health Plan.",
+   "at": 63.4,
+   "clip": [
+    58.4,
+    62.8
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "She is accepting new patients and she takes Cascadia Health Plan.",
+   "at": 63.4,
+   "clip": [
+    58.4,
+    62.8
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Saltmarsh Community Clinic, how can I help?",
+  "Yes, she is still practicing here.",
+  "That is correct. We are at nine Heron Lane and five six four five five five zero one zero eight is the number for bookings.",
+  "She is accepting new patients and she takes Cascadia Health Plan.",
+  "Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_887c126163ba49bc9b76b1f88a64a0d9",
+  "office": "sess_4fbecce540144a79b8a9ce97b51e8637"
+ }
+}

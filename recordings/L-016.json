@@ -1,0 +1,168 @@
+{
+ "id": "L-016",
+ "kind": "not_in_network",
+ "answeredBy": "person",
+ "duration": 78.5,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.3,
+   "t1": 4.1,
+   "text": "Asante & Rowe Psychology, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 4.1,
+   "t1": 15.3,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Asante still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.1,
+   "t1": 22.2,
+   "text": "Yes, Dr. Asante is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 24,
+   "t1": 24.1,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 24.1,
+   "t1": 33.2,
+   "text": "Are you still at 730 Sycamore St, Suite 4, and is this number, ending 0 1 1 6, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 36.8,
+   "t1": 48.8,
+   "text": "That is correct. We are at 730 Sycamore St, Suite 4. And yes, 564-555-0116 is the best number for booking."
+  },
+  {
+   "who": "tool",
+   "t0": 50.1,
+   "t1": 50.2,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 50.2,
+   "t1": 58.3,
+   "text": "Last one: is Dr. Asante taking new patients, and does Dr. Asante still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 62.8,
+   "t1": 70.4,
+   "text": "She is accepting new patients. We actually stopped taking Cascadia Health 2 years ago, so she is out of network for that plan now."
+  },
+  {
+   "who": "tool",
+   "t0": 72,
+   "t1": 72.1,
+   "text": "flag_listing",
+   "tool": {
+    "name": "flag_listing",
+    "args": {
+     "reason": "not_in_network"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 73.1,
+   "t1": 73.2,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 72.1,
+   "t1": 75.6,
+   "text": "Thank you for that information. Have a good day."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, Dr. Asante is still practicing here.",
+   "at": 24,
+   "clip": [
+    19.1,
+    22.2
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. We are at 730 Sycamore St, Suite 4. And yes, 564-555-0116 is the best number for booking.",
+   "at": 50.1,
+   "clip": [
+    36.8,
+    48.8
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. We are at 730 Sycamore St, Suite 4. And yes, 564-555-0116 is the best number for booking.",
+   "at": 50.1,
+   "clip": [
+    36.8,
+    48.8
+   ]
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "corrected",
+   "value": "No",
+   "quote": "She is accepting new patients. We actually stopped taking Cascadia Health 2 years ago, so she is out of network for that plan now.",
+   "at": 72,
+   "clip": [
+    62.8,
+    70.4
+   ]
+  }
+ },
+ "flags": [
+  "not_in_network"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Doesn't take this plan"
+ },
+ "said": [
+  "Asante & Rowe Psychology, how can I help?",
+  "Yes, Dr. Asante is still practicing here.",
+  "That is correct. We are at 7 3 0 Sycamore Street, Suite 4. And yes, five six four, five five five, zero one one six is the best number for booking.",
+  "She is accepting new patients. We actually stopped taking Cascadia Health two years ago, so she is out of network for that plan now."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_26e45975388d4a1da54a904fec537627",
+  "office": "sess_7915f2b11d5b4474b66a7482beb82379"
+ }
+}

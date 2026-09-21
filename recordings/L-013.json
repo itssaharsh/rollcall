@@ -1,0 +1,210 @@
+{
+ "id": "L-013",
+ "kind": "confirmed_hold",
+ "answeredBy": "person",
+ "duration": 76.6,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.1,
+   "t1": 3.2,
+   "text": "Second Tide Recovery, can you hold please?"
+  },
+  {
+   "who": "agent",
+   "t0": 3.2,
+   "t1": 6,
+   "text": "Of course."
+  },
+  {
+   "who": "office",
+   "t0": 9.9,
+   "t1": 10.8,
+   "text": "Thanks."
+  },
+  {
+   "who": "office",
+   "t0": 11.3,
+   "t1": 12.6,
+   "text": "What can I do for you?"
+  },
+  {
+   "who": "agent",
+   "t0": 10.8,
+   "t1": 23.1,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Rafael Quintero still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 28.6,
+   "t1": 30,
+   "text": "Yes, he is."
+  },
+  {
+   "who": "tool",
+   "t0": 31.9,
+   "t1": 32,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 32,
+   "t1": 39.3,
+   "text": "Are you still at 88 Drydock Rd, and is this number, ending 0 1 1 3, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 43.6,
+   "t1": 44.5,
+   "text": "That's correct."
+  },
+  {
+   "who": "office",
+   "t0": 44.7,
+   "t1": 46.5,
+   "text": "88 Drydock Road."
+  },
+  {
+   "who": "office",
+   "t0": 46.7,
+   "t1": 50.5,
+   "text": "And yes, 564-555-0113 is the booking line."
+  },
+  {
+   "who": "tool",
+   "t0": 51.7,
+   "t1": 51.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 51.8,
+   "t1": 60.8,
+   "text": "Last one: is Rafael Quintero taking new patients, and does Rafael Quintero still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 65.3,
+   "t1": 67,
+   "text": "He is taking new patients."
+  },
+  {
+   "who": "office",
+   "t0": 67.1,
+   "t1": 69.7,
+   "text": "Yes, he takes Cascadia."
+  },
+  {
+   "who": "tool",
+   "t0": 70.2,
+   "t1": 70.3,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 72.3,
+   "t1": 72.4,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 70.4,
+   "t1": 74.4,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is.",
+   "at": 31.9,
+   "clip": [
+    28.6,
+    30
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That's correct. 88 Drydock Road. And yes, 564-555-0113 is the booking line.",
+   "at": 51.7,
+   "clip": [
+    46.7,
+    50.5
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That's correct. 88 Drydock Road. And yes, 564-555-0113 is the booking line.",
+   "at": 51.7,
+   "clip": [
+    46.7,
+    50.5
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "He is taking new patients. Yes, he takes Cascadia.",
+   "at": 70.2,
+   "clip": [
+    67.1,
+    69.7
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is taking new patients. Yes, he takes Cascadia.",
+   "at": 70.2,
+   "clip": [
+    67.1,
+    69.7
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "confirmed",
+  "stamp": "Confirmed"
+ },
+ "said": [
+  "Second Tide Recovery, can you hold please?",
+  "Thanks. What can I do for you?",
+  "Yes, he is.",
+  "That's correct. 8 8 Drydock Road. And yes, 5 6 4 5 5 5 0 1 1 3 is the booking line.",
+  "He is taking new patients. And yes, he takes Cascadia."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_b0bae60e01ca45fd83c7b02feeff2072",
+  "office": "sess_6281c416673d4e2a86d1e032d14382de"
+ }
+}

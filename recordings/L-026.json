@@ -1,0 +1,198 @@
+{
+ "id": "L-026",
+ "kind": "accepting_yes",
+ "answeredBy": "person",
+ "duration": 83,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.7,
+   "t1": 4.2,
+   "text": "Bracken Avenue Counseling, how can I help?"
+  },
+  {
+   "who": "agent",
+   "t0": 4.2,
+   "t1": 15.5,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Santiago Morales still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 20.9,
+   "t1": 23.6,
+   "text": "Yes, he is still practicing here."
+  },
+  {
+   "who": "tool",
+   "t0": 25.4,
+   "t1": 25.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 25.6,
+   "t1": 33.6,
+   "text": "Are you still at 347 Bracken Ave, and is this number, ending 0 1 2 6, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 38.2,
+   "t1": 39.6,
+   "text": "That is correct."
+  },
+  {
+   "who": "office",
+   "t0": 40,
+   "t1": 48.8,
+   "text": "Our address is 347 Bracken Avenue, and you can reach the booking line at 564-555-0126."
+  },
+  {
+   "who": "tool",
+   "t0": 49.8,
+   "t1": 49.9,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 49.9,
+   "t1": 62.3,
+   "text": "Last one: we have Santiago Morales listed as not taking new patients, is that still right, and does Santiago Morales still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 67.7,
+   "t1": 71.8,
+   "text": "He is actually accepting new patients again as of last month."
+  },
+  {
+   "who": "office",
+   "t0": 71.8,
+   "t1": 74.9,
+   "text": "Yes, he still takes Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 75.9,
+   "t1": 76,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "accepting",
+     "value": "Yes"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 75.9,
+   "t1": 76,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 77.6,
+   "t1": 77.7,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 76,
+   "t1": 80.8,
+   "text": "Thank you so much for all your help. Have a great day."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, he is still practicing here.",
+   "at": 25.4,
+   "clip": [
+    20.9,
+    23.6
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "That is correct. Our address is 347 Bracken Avenue, and you can reach the booking line at 564-555-0126.",
+   "at": 49.8,
+   "clip": [
+    40,
+    48.8
+   ]
+  },
+  "phone": {
+   "status": "confirmed",
+   "quote": "That is correct. Our address is 347 Bracken Avenue, and you can reach the booking line at 564-555-0126.",
+   "at": 49.8,
+   "clip": [
+    40,
+    48.8
+   ]
+  },
+  "accepting": {
+   "status": "corrected",
+   "value": "Yes",
+   "quote": "He is actually accepting new patients again as of last month. Yes, he still takes Cascadia Health Plan.",
+   "at": 75.9,
+   "clip": [
+    71.8,
+    74.9
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "He is actually accepting new patients again as of last month. Yes, he still takes Cascadia Health Plan.",
+   "at": 75.9,
+   "clip": [
+    71.8,
+    74.9
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Bracken Avenue Counseling, how can I help?",
+  "Yes, he is still practicing here.",
+  "That is correct. Our address is 347 Bracken Avenue and you can reach the booking line at 5 6 4 5 5 5 0 1 2 6.",
+  "He is actually accepting new patients again as of last month. And yes, he still takes Cascadia Health Plan."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_b40e62e5a12b4c2d97b6addf6a005079",
+  "office": "sess_10456ce2a38f4430b05033f1dbd71b18"
+ }
+}

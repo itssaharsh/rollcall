@@ -1,0 +1,75 @@
+{
+ "id": "L-037",
+ "kind": "wrong_number_2",
+ "answeredBy": "wrong_number",
+ "duration": 13.7,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.4,
+   "t1": 2.7,
+   "text": "Spin cycle laundry."
+  },
+  {
+   "who": "tool",
+   "t0": 4.4,
+   "t1": 4.5,
+   "text": "flag_wrong_number",
+   "tool": {
+    "name": "flag_wrong_number",
+    "args": {
+     "reached": "Spin cycle laundry"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 6.5,
+   "t1": 6.6,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 4.6,
+   "t1": 10.6,
+   "text": "I apologize, I must have the wrong number. Thank you, goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "not_asked"
+  },
+  "address": {
+   "status": "not_asked"
+  },
+  "phone": {
+   "status": "not_asked"
+  },
+  "accepting": {
+   "status": "not_asked"
+  },
+  "inNetwork": {
+   "status": "not_asked"
+  }
+ },
+ "flags": [
+  "wrong_number"
+ ],
+ "outcome": {
+  "outcome": "ghost",
+  "stamp": "Remove",
+  "reason": "Wrong number"
+ },
+ "said": [
+  "Spin Cycle Laundry."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_98888d05784544dfa271ed7c9475b8c7",
+  "office": "sess_be19efe538614ddaa7a3a5bd93dc16f7"
+ }
+}

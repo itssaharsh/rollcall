@@ -1,0 +1,201 @@
+{
+ "id": "L-010",
+ "kind": "phone",
+ "answeredBy": "person",
+ "duration": 80.7,
+ "turns": [
+  {
+   "who": "office",
+   "t0": 1.2,
+   "t1": 4.6,
+   "text": "Fernhill Psychological Services, this is Bev."
+  },
+  {
+   "who": "agent",
+   "t0": 4.6,
+   "t1": 15.7,
+   "text": "Hi, this is Rollcall, an automated assistant for Cascadia Health Plan, checking one directory listing. Is Dr. Dlamini still seeing patients at your office?"
+  },
+  {
+   "who": "office",
+   "t0": 19.5,
+   "t1": 21.6,
+   "text": "Yes, she still practices here."
+  },
+  {
+   "who": "tool",
+   "t0": 23.4,
+   "t1": 23.5,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "practising"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 23.6,
+   "t1": 30.8,
+   "text": "Are you still at 301 Bracken Ave, and is this number, ending 0 1 1 0, the best one for booking?"
+  },
+  {
+   "who": "office",
+   "t0": 34.2,
+   "t1": 43,
+   "text": "We are at 301 Bracken Avenue. This line is just for billing. You need to call for bookings at 564-555-0160."
+  },
+  {
+   "who": "tool",
+   "t0": 44.5,
+   "t1": 44.6,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "phone",
+     "value": "564-555-0160"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 44.8,
+   "t1": 44.9,
+   "text": "correct_field",
+   "tool": {
+    "name": "correct_field",
+    "args": {
+     "field": "address",
+     "value": "301 Bracken Ave"
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 45.7,
+   "t1": 45.8,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "address",
+      "phone"
+     ]
+    }
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 44.7,
+   "t1": 63.1,
+   "text": "Last one: is Dr. Dlamini taking new patients, and does Dr. Dlamini still take Cascadia Health Plan?"
+  },
+  {
+   "who": "office",
+   "t0": 34.2,
+   "t1": 73,
+   "text": "Yes, that is correct. She is accepting new patients and we do take Cascadia Health Plan."
+  },
+  {
+   "who": "tool",
+   "t0": 73.6,
+   "t1": 73.7,
+   "text": "confirm_fields",
+   "tool": {
+    "name": "confirm_fields",
+    "args": {
+     "fields": [
+      "accepting",
+      "inNetwork"
+     ]
+    }
+   }
+  },
+  {
+   "who": "tool",
+   "t0": 75.6,
+   "t1": 75.7,
+   "text": "end_call",
+   "tool": {
+    "name": "end_call",
+    "args": {}
+   }
+  },
+  {
+   "who": "agent",
+   "t0": 73.8,
+   "t1": 77.9,
+   "text": "Thank you so much for your help. Goodbye."
+  }
+ ],
+ "fields": {
+  "practising": {
+   "status": "confirmed",
+   "quote": "Yes, she still practices here.",
+   "at": 23.4,
+   "clip": [
+    19.5,
+    21.6
+   ]
+  },
+  "address": {
+   "status": "confirmed",
+   "quote": "We are at 301 Bracken Avenue. This line is just for billing. You need to call for bookings at 564-555-0160.",
+   "at": 45.7,
+   "clip": [
+    34.2,
+    43
+   ]
+  },
+  "phone": {
+   "status": "corrected",
+   "value": "564-555-0160",
+   "quote": "We are at 301 Bracken Avenue. This line is just for billing. You need to call for bookings at 564-555-0160.",
+   "at": 44.5,
+   "clip": [
+    34.2,
+    43
+   ]
+  },
+  "accepting": {
+   "status": "confirmed",
+   "quote": "Yes, that is correct. She is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 73.6,
+   "clip": [
+    34.2,
+    73
+   ]
+  },
+  "inNetwork": {
+   "status": "confirmed",
+   "quote": "Yes, that is correct. She is accepting new patients and we do take Cascadia Health Plan.",
+   "at": 73.6,
+   "clip": [
+    34.2,
+    73
+   ]
+  }
+ },
+ "flags": [],
+ "outcome": {
+  "outcome": "corrected",
+  "stamp": "Corrected ·1"
+ },
+ "said": [
+  "Fernhill Psychological Services, this is Bev.",
+  "Yes, she still practises here.",
+  "We are at 301 Bracken Avenue. This line is just for billing. You need to call for bookings at 5 6 4 5 5 5 0 1 6 0.",
+  "Yes, that is correct. She is accepting new patients and we do take Cascadia Health Plan.",
+  "You're welcome. Goodbye."
+ ],
+ "refusals": [],
+ "sessions": {
+  "caller": "sess_6aa5f753886f4d668907879dabc66faf",
+  "office": "sess_36701e656c6743169d7e23a68b338179"
+ }
+}
