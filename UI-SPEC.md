@@ -16,6 +16,7 @@ deviations:
   - "Map is a hand-drawn SVG of a fictional county, not MapLibre: no keys, no tile loads in front of a judge, and no fake clinic lands on a real address."
   - "Added C-27 CallLog under the map (audit trail, newest first). It fills the space a fixed-aspect map leaves on tall screens and hides itself when the side column is under 530px."
   - "Custom breakpoint `wide` (1400px) because Tailwind 4 sorts arbitrary min-[] variants before named ones, which let `sm:`/`lg:` rules win."
+  - "Added S0 Landing at `/` (blueprint j) on 2026-09-22; the console moved to `/console`. Judges are not healthcare people: the landing says what this is in two sentences while the real console runs the recorded sweep live in the hero (iframe of `/console?embed=1`, looping, never marks the session as seen). Old `/?state=…` links redirect."
   - "Console height is max(100dvh, 960px) at lg+: on a 900px screen the page scrolls 60px rather than squeezing the map."
 ---
 
@@ -60,7 +61,8 @@ C wins. A and C share blue ink; C adds the register, the lamps and the strike-th
 
 | id | route | purpose | entered from | primary action | states |
 |---|---|---|---|---|---|
-| S1 | `/` | Sweep console: tally, switchboard, register, map | link | Answer a call | before · running · done · loading · error · empty |
+| S0 | `/` | Landing: what it is, live console in the hero, three figures, two real clips, how it works, the score | link | Watch it make 40 calls | static + live embed |
+| S1 | `/console` | Sweep console: tally, switchboard, register, map | link | Answer a call | before · running · done · loading · error · empty |
 | S1a | `/` tab `review` | Needs-a-human queue | tab, tally block | Resolve a card | list · empty · resolving |
 | S1b | `/` tab `report` | Report preview | tab | Download corrections | ready · empty (sweep not run) |
 | S2 | `/?listing=L-014` | Listing drawer over S1 | row, pin, tally strip box | Play clip | default · playing · no-audio · stale (not called yet) · live (in call) |

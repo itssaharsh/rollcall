@@ -19,12 +19,15 @@ export function useSweep() {
 
   const stop = () => cancelAnimationFrame(raf.current)
 
+  const embed = useRef(false)
+
   const finish = useCallback(() => {
     stop()
     clock.current.t = META.sweepDuration
     setT(META.sweepDuration)
     setMode('done')
-    try { sessionStorage.setItem(SEEN, '1') } catch {}
+    // the landing page's live preview must not spend the visitor's first-visit autoplay
+    if (!embed.current) try { sessionStorage.setItem(SEEN, '1') } catch {}
   }, [])
 
   const start = useCallback(() => {
@@ -55,6 +58,7 @@ export function useSweep() {
   // first paint is always `before`; the URL, the session and the OS then decide what happens next
   useEffect(() => {
     const q = new URLSearchParams(location.search)
+    if (q.has('embed')) { embed.current = true; const id = setTimeout(start, 600); return () => { clearTimeout(id); stop() } }
     const state = q.get('state')
     const at = q.get('t')
     if (state === 'loading' || state === 'error' || state === 'empty') setView(state)
@@ -73,6 +77,9 @@ export function useSweep() {
     const id = setTimeout(start, 1200)
     return () => { clearTimeout(id); stop() }
   }, [finish, start])
+
+  // in the preview the sweep loops: a pause on the finished register, then again
+  useEffect(() => { if (!embed.current || mode !== 'done') return; const id = setTimeout(start, 6000); return () => clearTimeout(id) }, [mode, start])
 
   return { mode, t, view, frozen, start, skip: finish, reset }
 }

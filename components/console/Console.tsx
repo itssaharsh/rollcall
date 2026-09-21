@@ -84,7 +84,7 @@ export function Console() {
   // the moment the sweep completes: stamp, and one nudge toward the call
   useEffect(() => {
     if (mode === 'running') wasRunning.current = true
-    if (mode === 'done' && wasRunning.current) { wasRunning.current = false; stamp(); setAttention(true); const id = setTimeout(() => setAttention(false), 1400); return () => clearTimeout(id) }
+    if (mode === 'done' && wasRunning.current) { wasRunning.current = false; if (!new URLSearchParams(location.search).has('embed')) stamp(); setAttention(true); const id = setTimeout(() => setAttention(false), 1400); return () => clearTimeout(id) }
   }, [mode])
 
   // single-key shortcuts; key-triggered actions don't animate

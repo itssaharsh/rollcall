@@ -7,11 +7,12 @@ import { join } from 'node:path'
 const base = process.argv[2] ?? 'http://localhost:3210'
 const only = process.argv[3]
 const shots = [
-  ['console-before', '/?state=before'], ['console-running', '/?state=running'], ['console-done', '/?state=done'],
-  ['console-loading', '/?state=loading'], ['console-error', '/?state=error'], ['console-empty', '/?state=empty'],
-  ['map', '/?state=done&pane=map'], ['drawer-corrected', '/?listing=L-017'], ['drawer-ghost', '/?listing=L-014'], ['drawer-review', '/?listing=L-009'],
-  ['review', '/?tab=review'], ['report-tab', '/?tab=report'],
-  ...['invite', 'unavailable', 'permission', 'ringing', 'connected', 'wrap', 'done', 'mic-denied', 'quota', 'dropped'].map((s) => [`call-${s}`, `/?call=1&state=${s}`]),
+  ['landing', '/'],
+  ['console-before', '/console?state=before'], ['console-running', '/console?state=running'], ['console-done', '/console?state=done'],
+  ['console-loading', '/console?state=loading'], ['console-error', '/console?state=error'], ['console-empty', '/console?state=empty'],
+  ['map', '/console?state=done&pane=map'], ['drawer-corrected', '/console?listing=L-017'], ['drawer-ghost', '/console?listing=L-014'], ['drawer-review', '/console?listing=L-009'],
+  ['review', '/console?tab=review'], ['report-tab', '/console?tab=report'],
+  ...['invite', 'unavailable', 'permission', 'ringing', 'connected', 'wrap', 'done', 'mic-denied', 'quota', 'dropped'].map((s) => [`call-${s}`, `/console?call=1&state=${s}`]),
   ['report', '/report'], ['about', '/about'], ['kit', '/_kit'], ['404', '/nope'],
 ].filter(([name]) => !only || name.includes(only))
 const widths = [390, 1024, 1440]

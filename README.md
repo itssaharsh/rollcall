@@ -71,7 +71,7 @@ The console is a register, a wall map and a six-line desk phone (`DESIGN.md`, `U
 | Criterion | Where to look |
 |---|---|
 | Application of Technology | `lib/agent/` (tools, session builder, write gate, live driver), `scripts/lib/bridge.ts`, ADRs 0001, 0005, 0006 |
-| Presentation | the console at `/`, every component and state at `/_kit`, `DESIGN.md`, `UI-SPEC.md` |
+| Presentation | the landing page at `/` (live console in the hero), the console at `/console`, every component and state at `/_kit`, `DESIGN.md`, `UI-SPEC.md` |
 | Business Value | `/about` (the rule, the benchmark, cost per listing), `/report` (the artifact a plan would file) |
 | Originality | click a struck-through cell; open *Needs a human*; open any transcript with a red "Refused by the gate" row |
 | Does it work? | `npm run verify` (no credentials), `npm run eval` (40/40 outcomes, 150/150 written fields, 0 false writes), `tests/replay.test.ts` replays every recorded call through the gate |
@@ -90,7 +90,7 @@ Scored against the offices' hidden truth sheets (`npm run eval`): 40 of 40 outco
 
 ```bash
 npm install
-npm run dev        # http://localhost:3210, demo mode, no key needed
+npm run dev        # http://localhost:3210 (landing) and /console, no key needed
 npm run verify     # typecheck + tests + judge-check, prints PASS/FAIL
 ```
 

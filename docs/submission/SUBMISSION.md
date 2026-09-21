@@ -28,8 +28,8 @@ Every office is simulated. No real clinic was called.
 | Time | Screen | Say |
 |---|---|---|
 | 0:00 | black card | "Call ten therapists from your insurer's list. Eight are ghosts." |
-| 0:10 | /about, the rule | "By law, plans re-check every listing every 90 days. That's a call centre." |
-| 0:18 | `/?state=before` → Start sweep | "Rollcall makes the calls. Six lines, forty offices." |
+| 0:10 | the landing page, the three numbers | "By law, plans re-check every listing every 90 days. That's a call centre." |
+| 0:18 | `/console?state=before` → Start sweep | "Rollcall makes the calls. Six lines, forty offices." |
 | 0:45 | click the struck cell on row 7 | "Every change has a clip. That's the receptionist." (let the audio play) |
 | 1:05 | Needs a human → row 9 | "She said 'I think so'. It refused to write that down." |
 | 1:25 | row 38 transcript, red refused row | "This gate is code, not prompt. Here it refused the model twice." |

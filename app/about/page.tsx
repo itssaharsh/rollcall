@@ -26,7 +26,7 @@ export default function About() {
       <Link href="/" aria-label="Rollcall console"><Lockup size={20} /></Link>
       <h1 className="t-display mt-8 text-[clamp(2rem,1.4rem+3vw,3.25rem)]">Your insurer’s doctor list is wrong. By law, someone has to phone every office to fix it.</h1>
       <p className="mt-5 text-[17px] text-ink-muted">Rollcall makes those calls. It phones every listing, asks five questions, corrects the directory, and keeps the receptionist’s own words behind every change.</p>
-      <p className="mt-6"><Link href="/" className="inline-flex h-10 items-center rounded-md bg-accent px-4 font-semibold text-accent-ink transition-colors duration-150 hover:bg-accent-hover">Open the console</Link></p>
+      <p className="mt-6"><Link href="/console" className="inline-flex h-10 items-center rounded-md bg-accent px-4 font-semibold text-accent-ink transition-colors duration-150 hover:bg-accent-hover">Open the console</Link></p>
 
       <h2 className="t-display mt-14 text-[24px]">The problem</h2>
       <p className="mt-3">US Senate Finance Committee staff called 120 mental-health listings across 12 Medicare Advantage plans. A third were wrong numbers, inaccurate or never answered, and they could book an appointment <strong>18% of the time</strong>. Patients call the list, hear “he retired” or “we don’t take that plan,” and give up.</p>

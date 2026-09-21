@@ -16,9 +16,9 @@ page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
 const ok = (name, pass, extra = '') => { console.log(`${pass ? 'PASS' : 'FAIL'}  ${name}${extra ? '  — ' + extra : ''}`); if (!pass) process.exitCode = 1 }
 const text = (sel) => page.locator(sel).first().innerText()
 
-await page.goto(base + '/?state=before', { waitUntil: 'networkidle' })
+await page.goto(base + '/console?state=before', { waitUntil: 'networkidle' })
 ok('the register starts stale', (await text('header button')).includes('Start sweep') && (await text('section[aria-label="Sweep tally"]')).includes('0/40'))
-await page.goto(base + '/', { waitUntil: 'domcontentloaded' })
+await page.goto(base + '/console', { waitUntil: 'domcontentloaded' })
 await page.waitForTimeout(2500)
 ok('sweep autoplays without a click', (await text('header button')).includes('Sweeping'))
 const lamps = await page.locator('section[aria-label="Phone lines"] button').count()
@@ -65,7 +65,7 @@ ok('reset shortcut clears the demo', (await text('section[aria-label="Sweep tall
 
 // reduced motion: lands on done, no autoplay
 const calm = await browser.newPage({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' })
-await calm.goto(base + '/', { waitUntil: 'networkidle' }); await calm.waitForTimeout(1800)
+await calm.goto(base + '/console', { waitUntil: 'networkidle' }); await calm.waitForTimeout(1800)
 ok('reduced motion skips the replay', (await calm.locator('header button').first().innerText()).includes('Replay sweep'))
 
 console.log(errors.length ? 'console errors:\n' + errors.join('\n') : 'no console errors')

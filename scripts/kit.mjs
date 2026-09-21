@@ -21,7 +21,7 @@ await deck.screenshot({ path: 'docs/submission/cover.png', clip: { x: 0, y: 0, w
 
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, recordVideo: { dir: 'docs/media/_video', size: { width: 1280, height: 800 } } })
 const page = await ctx.newPage()
-await page.goto(base + '/', { waitUntil: 'domcontentloaded' })
+await page.goto(base + '/console', { waitUntil: 'domcontentloaded' })
 await page.addStyleTag({ content: 'nextjs-portal{display:none!important}' })
 await page.waitForTimeout(16000)
 await ctx.close(); await browser.close()
