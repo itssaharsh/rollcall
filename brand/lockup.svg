@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 48" role="img" aria-label="Rollcall">
+  <title>Rollcall</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5">
+    <path stroke="#111A2E" d="M11 40V9h11a8.5 8.5 0 0 1 0 17H11"/>
+    <path stroke="#2438C9" d="M21 27.5l7 11.5 13-21"/>
+  </g>
+  <!-- wordmark: Instrument Sans, width 75, weight 700, tracking -0.02em. Convert to outlines before sending to print. -->
+  <text x="58" y="36" font-family="'Instrument Sans', sans-serif" font-size="34" font-weight="700" font-stretch="75%" letter-spacing="-0.68" fill="#111A2E">Rollcall</text>
+</svg>
