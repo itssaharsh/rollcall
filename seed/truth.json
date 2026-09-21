@@ -1,0 +1,962 @@
+[
+ {
+  "id": "L-001",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "412 Alder St, Suite 2",
+   "phone": "(564) 555-0101",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "eve",
+  "greeting": "Thanks for calling Alder Street Counseling, Rob speaking.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-002",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "75 Wharf Rd",
+   "phone": "(564) 555-0102",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "george",
+  "greeting": "Harborlight Behavioral Health, this is Glenn.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-003",
+  "kind": "accepting_no",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1180 Kestrel Ave, Suite 300",
+   "phone": "(564) 555-0103",
+   "accepting": "No",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "jean",
+  "greeting": "Northgate Psychiatry Associates, this is Nadia.",
+  "muteAfterGreeting": false,
+  "brief": "The provider is NOT accepting new patients; say so plainly and give a short reason. Everything else on file is correct."
+ },
+ {
+  "id": "L-004",
+  "kind": "confirmed_hold",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "29 Foundry Rd",
+   "phone": "(564) 555-0104",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "mary",
+  "greeting": "Old Mill Family Therapy, can you hold please?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. You are very busy: sound rushed, keep answers to a few words."
+ },
+ {
+  "id": "L-005",
+  "kind": "left",
+  "outcome": "ghost",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "No",
+   "address": "640 Tamarack Way",
+   "phone": "(564) 555-0105",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "michael",
+  "greeting": "Tamarack Wellness Group, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The provider left this practice and you do not know where they went. Say so as soon as you are asked about them."
+ },
+ {
+  "id": "L-006",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "18 Overlook Dr, Suite 5",
+   "phone": "(564) 555-0106",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "anna",
+  "greeting": "Quarry Heights Psychology, this is Glenn.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-007",
+  "kind": "address",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "2310 Pruett St, Suite 1",
+   "phone": "(564) 555-0107",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "corrected",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "charles",
+  "greeting": "Eastbank Counseling Collective, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The office moved in June. Give the new address clearly when asked and say yes when it is read back. Everything else is correct."
+ },
+ {
+  "id": "L-008",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "9 Heron Ln",
+   "phone": "(564) 555-0108",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "paul",
+  "greeting": "Saltmarsh Community Clinic, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-009",
+  "kind": "evasive",
+  "outcome": "review",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1180 Kestrel Ave, Suite 300",
+   "phone": "(564) 555-0109",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "unconfirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "vera",
+  "greeting": "Northgate Psychiatry Associates, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "You do not know whether the provider is accepting new patients. Hedge every time that question comes up: 'I think so?', 'you would have to ask the doctor'. Never give a clear yes or no to it, even if asked twice. Answer every other question clearly."
+ },
+ {
+  "id": "L-010",
+  "kind": "phone",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "301 Bracken Ave",
+   "phone": "(564) 555-0160",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "corrected",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "alba",
+  "greeting": "Fernhill Psychological Services, this is Bev.",
+  "muteAfterGreeting": false,
+  "brief": "This line is billing. Patients should book on the new number; say it digit by digit and say yes when it is read back. Everything else is correct."
+ },
+ {
+  "id": "L-011",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "57 Cooper St",
+   "phone": "(564) 555-0111",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "eve",
+  "greeting": "Lantern Family Counseling, this is Paula.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-012",
+  "kind": "accepting_no",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1412 Varnum Blvd, Suite 210",
+   "phone": "(564) 555-0112",
+   "accepting": "No",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "george",
+  "greeting": "Thanks for calling Eastbank Mind & Mood Clinic, Trevor speaking.",
+  "muteAfterGreeting": false,
+  "brief": "The provider is NOT accepting new patients; say so plainly and give a short reason. Everything else on file is correct."
+ },
+ {
+  "id": "L-013",
+  "kind": "confirmed_hold",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "88 Drydock Rd",
+   "phone": "(564) 555-0113",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "jean",
+  "greeting": "Second Tide Recovery, can you hold please?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. You are very busy: sound rushed, keep answers to a few words."
+ },
+ {
+  "id": "L-014",
+  "kind": "retired",
+  "outcome": "ghost",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "No",
+   "address": "44 Overlook Dr",
+   "phone": "(564) 555-0114",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "mary",
+  "greeting": "Good morning, Quarry Heights Psychiatry.",
+  "muteAfterGreeting": false,
+  "brief": "The provider retired. Say so as soon as you are asked about them. You have told the insurance plans before and are a little tired of it."
+ },
+ {
+  "id": "L-015",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "29 Foundry Rd",
+   "phone": "(564) 555-0115",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "michael",
+  "greeting": "Old Mill Family Therapy, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-016",
+  "kind": "not_in_network",
+  "outcome": "ghost",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "730 Sycamore St, Suite 4",
+   "phone": "(564) 555-0116",
+   "accepting": "Yes",
+   "inNetwork": "No"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "corrected"
+  },
+  "voice": "anna",
+  "greeting": "Asante & Rowe Psychology, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The provider is here, but the practice dropped this health plan two years ago and is out of network. Say so clearly when asked."
+ },
+ {
+  "id": "L-017",
+  "kind": "address_accepting",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "655 Tamarack Way, Suite 12",
+   "phone": "(564) 555-0117",
+   "accepting": "No",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "corrected",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "charles",
+  "greeting": "Thanks for calling Tamarack Wellness Group, Nadia speaking.",
+  "muteAfterGreeting": false,
+  "brief": "The office moved; give the new address clearly. The provider is NOT accepting new patients. Everything else is correct."
+ },
+ {
+  "id": "L-018",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "15 Gristmill Ct",
+   "phone": "(564) 555-0118",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "paul",
+  "greeting": "Thanks for calling Feldman Psychological, Bev speaking.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-019",
+  "kind": "accepting_no",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "2203 Pruett St",
+   "phone": "(564) 555-0119",
+   "accepting": "No",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "vera",
+  "greeting": "Thanks for calling Eastbank Counseling Collective, Marisol speaking.",
+  "muteAfterGreeting": false,
+  "brief": "The provider is NOT accepting new patients; say so plainly and give a short reason. Everything else on file is correct."
+ },
+ {
+  "id": "L-020",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "9 Heron Ln",
+   "phone": "(564) 555-0120",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "alba",
+  "greeting": "Saltmarsh Community Clinic, this is Aisha.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-021",
+  "kind": "conflict",
+  "outcome": "review",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "516 Larkspur Rd",
+   "phone": "(564) 555-0121",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "unconfirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "eve",
+  "greeting": "Good morning, Camacho Couples & Family.",
+  "muteAfterGreeting": false,
+  "brief": "When asked about the address, first say it is right, then add that patients are actually seen at the Larkspur annex, 'I think it is 530?'. Stay unsure if pressed. Answer every other question clearly."
+ },
+ {
+  "id": "L-022",
+  "kind": "wrong_number",
+  "outcome": "ghost",
+  "answeredBy": "wrong_number",
+  "truth": {
+   "practising": "No",
+   "address": "905 Kestrel Ave",
+   "phone": "(564) 555-0122",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "george",
+  "greeting": "Tony's Pizza, pickup or delivery?",
+  "muteAfterGreeting": false,
+  "brief": "You are NOT a medical office. You have never heard of the practice. Tell them they have the wrong number."
+ },
+ {
+  "id": "L-023",
+  "kind": "phone",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "75 Wharf Rd",
+   "phone": "(564) 555-0173",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "corrected",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "jean",
+  "greeting": "Good morning, Harborlight Behavioral Health.",
+  "muteAfterGreeting": false,
+  "brief": "This line is billing. Patients should book on the new number; say it digit by digit and say yes when it is read back. Everything else is correct."
+ },
+ {
+  "id": "L-024",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "88 Drydock Rd",
+   "phone": "(564) 555-0124",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "mary",
+  "greeting": "Thanks for calling Second Tide Recovery, Nadia speaking.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-025",
+  "kind": "retired",
+  "outcome": "ghost",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "No",
+   "address": "62 Quarry Rim Rd",
+   "phone": "(564) 555-0125",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "michael",
+  "greeting": "Thanks for calling Abernathy Psychology, Trevor speaking.",
+  "muteAfterGreeting": false,
+  "brief": "The provider retired. Say so as soon as you are asked about them. You have told the insurance plans before and are a little tired of it."
+ },
+ {
+  "id": "L-026",
+  "kind": "accepting_yes",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "347 Bracken Ave",
+   "phone": "(564) 555-0126",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "anna",
+  "greeting": "Bracken Avenue Counseling, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The provider IS accepting new patients again, since last month. Everything else on file is correct."
+ },
+ {
+  "id": "L-027",
+  "kind": "confirmed_hold",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1412 Varnum Blvd, Suite 210",
+   "phone": "(564) 555-0127",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "charles",
+  "greeting": "Eastbank Mind & Mood Clinic, can you hold please?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. You are very busy: sound rushed, keep answers to a few words."
+ },
+ {
+  "id": "L-028",
+  "kind": "voicemail",
+  "outcome": "retry",
+  "answeredBy": "voicemail",
+  "truth": {
+   "practising": "Yes",
+   "address": "210 Millrace St",
+   "phone": "(564) 555-0128",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "not_asked",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "paul",
+  "greeting": "You've reached Carter Family Therapy. Our office is closed for lunch from twelve to one. Please leave a message after the tone.",
+  "muteAfterGreeting": true,
+  "brief": ""
+ },
+ {
+  "id": "L-029",
+  "kind": "address",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "40 Tidewater Ave, Floor 2",
+   "phone": "(564) 555-0129",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "corrected",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "vera",
+  "greeting": "Saltmarsh Psychology Partners, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The office moved in June. Give the new address clearly when asked and say yes when it is read back. Everything else is correct."
+ },
+ {
+  "id": "L-030",
+  "kind": "left",
+  "outcome": "ghost",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "No",
+   "address": "905 Kestrel Ave",
+   "phone": "(564) 555-0130",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "alba",
+  "greeting": "Kestrel Behavioral Medicine, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The provider left this practice and you do not know where they went. Say so as soon as you are asked about them."
+ },
+ {
+  "id": "L-031",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "120 Overlook Dr",
+   "phone": "(564) 555-0131",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "eve",
+  "greeting": "Thanks for calling Overlook Counseling, Rob speaking.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-032",
+  "kind": "manager",
+  "outcome": "review",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "8 Cannery Row",
+   "phone": "(564) 555-0132",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "unconfirmed",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "george",
+  "greeting": "Good morning, Lindgren Psychology.",
+  "muteAfterGreeting": false,
+  "brief": "You are covering the desk today and cannot answer anything about the listing. Tell them to call back Tuesday after two and ask for the office manager."
+ },
+ {
+  "id": "L-033",
+  "kind": "accepting_no",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1980 Pruett St",
+   "phone": "(564) 555-0133",
+   "accepting": "No",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "corrected",
+   "inNetwork": "confirmed"
+  },
+  "voice": "jean",
+  "greeting": "Pruett Street Counseling, this is Tasha.",
+  "muteAfterGreeting": false,
+  "brief": "The provider is NOT accepting new patients; say so plainly and give a short reason. Everything else on file is correct."
+ },
+ {
+  "id": "L-034",
+  "kind": "disconnected",
+  "outcome": "ghost",
+  "answeredBy": "intercept",
+  "truth": {
+   "practising": "Yes",
+   "address": "415 Larkspur Rd, Suite B",
+   "phone": "(564) 555-0134",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "not_asked",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "mary",
+  "greeting": "The number you have dialed is not in service. Please check the number and try again.",
+  "muteAfterGreeting": true,
+  "brief": ""
+ },
+ {
+  "id": "L-035",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "702 Sycamore St",
+   "phone": "(564) 555-0135",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "michael",
+  "greeting": "Good morning, Sycamore Family Practice.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-036",
+  "kind": "confirmed_hold",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "18 Overlook Dr, Suite 5",
+   "phone": "(564) 555-0136",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "anna",
+  "greeting": "Quarry Heights Psychology, can you hold please?",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. You are very busy: sound rushed, keep answers to a few words."
+ },
+ {
+  "id": "L-037",
+  "kind": "wrong_number_2",
+  "outcome": "ghost",
+  "answeredBy": "wrong_number",
+  "truth": {
+   "practising": "No",
+   "address": "71 Tidewater Ave",
+   "phone": "(564) 555-0137",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "corrected",
+   "address": "not_asked",
+   "phone": "not_asked",
+   "accepting": "not_asked",
+   "inNetwork": "not_asked"
+  },
+  "voice": "charles",
+  "greeting": "Spin Cycle Laundry.",
+  "muteAfterGreeting": false,
+  "brief": "You are NOT a medical office. You have never heard of the practice. Tell them they have the wrong number."
+ },
+ {
+  "id": "L-038",
+  "kind": "address",
+  "outcome": "corrected",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "1365 Varnum Blvd, Suite 400",
+   "phone": "(564) 555-0138",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "corrected",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "paul",
+  "greeting": "Varnum Psychiatry, how can I help?",
+  "muteAfterGreeting": false,
+  "brief": "The office moved in June. Give the new address clearly when asked and say yes when it is read back. Everything else is correct."
+ },
+ {
+  "id": "L-039",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "41 Gristmill Ct",
+   "phone": "(564) 555-0139",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "vera",
+  "greeting": "Good morning, Gristmill Counseling.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ },
+ {
+  "id": "L-040",
+  "kind": "confirmed",
+  "outcome": "confirmed",
+  "answeredBy": "person",
+  "truth": {
+   "practising": "Yes",
+   "address": "266 Sycamore St, Suite 9",
+   "phone": "(564) 555-0140",
+   "accepting": "Yes",
+   "inNetwork": "Yes"
+  },
+  "expect": {
+   "practising": "confirmed",
+   "address": "confirmed",
+   "phone": "confirmed",
+   "accepting": "confirmed",
+   "inNetwork": "confirmed"
+  },
+  "voice": "alba",
+  "greeting": "Good morning, Thornbury & Associates.",
+  "muteAfterGreeting": false,
+  "brief": "Everything the caller has on file is correct. Answer briefly and helpfully. You are busy."
+ }
+]
