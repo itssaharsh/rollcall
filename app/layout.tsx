@@ -4,7 +4,8 @@ import { mono, sans } from './fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  // Vercel sets VERCEL_PROJECT_PRODUCTION_URL; the OG image needs an absolute base
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3210')),
   title: { default: 'Rollcall — phones every office in the directory', template: '%s · Rollcall' },
   description: 'A voice agent that calls every doctor’s office in a health plan’s directory, fixes the list, and keeps the audio behind every change. Built on AssemblyAI.',
 }

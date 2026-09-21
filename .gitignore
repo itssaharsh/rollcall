@@ -11,3 +11,4 @@ next-env.d.ts
 recordings/*.wav
 public/calls/*.wav
 recordings/*.log
+.env*
