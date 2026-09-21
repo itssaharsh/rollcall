@@ -4,7 +4,8 @@
 //   2. Opens a second session, streams PCM16/24kHz in exact real time (20ms frames), and inserts the same clip at t=2s and t=60s.
 //   3. Prints how long after each clip's onset the server emitted input.speech.started / input.speech.stopped.
 // Pass "gated" to send audio only around the clips (1.5s tail) instead of continuous silence: the delay then stays constant.
-const KEY = process.env.ASSEMBLYAI_API_KEY, GATED = process.argv[2] === 'gated', RATE = 24000, FRAME = 480
+const KEY = process.env.ASSEMBLYAI_API_KEY, GATED = process.argv.includes('gated'), RATE = 24000, FRAME = 480
+const SECOND = Number(process.argv.find((a) => /^\d+$/.test(a)) ?? 60) // when the second clip plays; pass e.g. 120 for a longer session
 const open = async (session, onEvent) => {
   const u = new URL('https://agents.assemblyai.com/v1/token'); u.searchParams.set('expires_in_seconds', '120')
   const { token } = await (await fetch(u, { headers: { Authorization: `Bearer ${KEY}` } })).json()
@@ -28,7 +29,7 @@ console.log(`clip: ${clipSec.toFixed(2)}s of speech`)
 // 2. the stream
 const marks = []; let now = 0
 const ws = await open({ system_prompt: 'You are silent. Never reply.' }, (e) => { if (e.type === 'input.speech.started' || e.type === 'input.speech.stopped') marks.push([now, e.type]) })
-const starts = [2, 60], began = performance.now(); let n = 0, sent = 0
+const starts = [2, SECOND], began = performance.now(); let n = 0, sent = 0
 await new Promise((done) => { const timer = setInterval(() => {
   const due = Math.floor((performance.now() - began) / 20)
   while (n < due) {
@@ -36,7 +37,7 @@ await new Promise((done) => { const timer = setInterval(() => {
     for (const s of starts) { const off = Math.round((now - s) * RATE); if (off >= 0 && off < clip.length) frame.set(clip.subarray(off, Math.min(clip.length, off + FRAME))) }
     const nearClip = starts.some((s) => now >= s - 0.2 && now <= s + clipSec + 1.5)
     if (!GATED || nearClip) { ws.send(JSON.stringify({ type: 'input.audio', audio: Buffer.from(frame.buffer).toString('base64') })); sent += FRAME }
-    n++; if (now > 60 + clipSec + 6) { clearInterval(timer); return done() }
+    n++; if (now > SECOND + clipSec + 6) { clearInterval(timer); return done() }
   } }, 5) })
 console.log(`${GATED ? 'gated' : 'continuous'}: sent ${(sent / RATE).toFixed(2)}s of audio in ${((performance.now() - began) / 1000).toFixed(2)}s wall, socket backlog ${ws.bufferedAmount} bytes`)
 await end(ws)
