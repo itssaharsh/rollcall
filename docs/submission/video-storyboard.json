@@ -60,26 +60,36 @@
    "speed": 0.9
   },
   {
-   "id": "problem",
-   "type": "card",
-   "say": "Senate staff phoned a hundred and twenty listed therapists. They could book an appointment eighteen percent of the time. Retired, moved, wrong number, not taking that plan.",
-   "card": {
-    "layout": "stat",
-    "value": "18%",
-    "label": "of listed therapists could actually be booked",
-    "sub": "US Senate Finance Committee staff, 120 calls, 2023"
-   }
-  },
-  {
-   "id": "law",
+   "id": "landing",
    "type": "live",
-   "say": "Nobody chooses to make these calls. Three US rules require them, from every health plan, every ninety days.",
+   "say": "Senate staff phoned a hundred and twenty listed therapists. They could book an appointment eighteen percent of the time. Retired, moved, wrong number, not taking that plan. [[0.3]] Nobody chooses to make these calls. Three US rules require them, from every health plan, every ninety days.",
    "actions": [
+    {
+     "do": "pause",
+     "ms": 2800
+    },
+    {
+     "do": "scroll",
+     "to": "section[aria-label='The problem in three numbers']",
+     "offset": 0.06,
+     "ms": 1100,
+     "at": "appointment"
+    },
+    {
+     "do": "camera",
+     "focus": "section[aria-label='The problem in three numbers']",
+     "zoom": 1.15,
+     "at": "eighteen"
+    },
+    {
+     "do": "pause",
+     "ms": 6500
+    },
     {
      "do": "scroll",
      "to": "#law",
      "offset": 0.05,
-     "ms": 1400,
+     "ms": 1200,
      "at": "Three"
     },
     {
@@ -90,7 +100,7 @@
     },
     {
      "do": "pause",
-     "ms": 3200
+     "ms": 3500
     }
    ]
   },
@@ -395,7 +405,7 @@
     }
    ],
    "speed": 0.9,
-   "lead": 3.9
+   "lead": 4.6
   },
   {
    "id": "report",
@@ -474,16 +484,40 @@
    }
   },
   {
-   "id": "proof",
-   "type": "card",
+   "id": "scored",
+   "type": "live",
    "say": "Scored, not claimed. Every simulated office has a hidden truth sheet. Across forty recorded calls: forty of forty outcomes, a hundred and fifty of a hundred and fifty written fields, zero false writes.",
-   "card": {
-    "layout": "stat",
-    "kicker": "Scored, not claimed",
-    "value": "150 / 150",
-    "label": "written fields match the offices' hidden truth sheets",
-    "sub": "40 of 40 outcomes \u00b7 0 false writes \u00b7 5 refused by the gate \u00b7 about 8 cents per listing"
-   }
+   "actions": [
+    {
+     "do": "goto",
+     "url": "https://rollcall-sage.vercel.app/#scored"
+    },
+    {
+     "do": "wait",
+     "for": "#scored dl",
+     "timeout": 30000
+    },
+    {
+     "do": "camera",
+     "focus": "#scored dl",
+     "zoom": "fit",
+     "at": "Across"
+    },
+    {
+     "do": "pause",
+     "ms": 8500
+    },
+    {
+     "do": "camera",
+     "focus": "#scored",
+     "zoom": 1.08,
+     "at": "zero"
+    },
+    {
+     "do": "pause",
+     "ms": 2500
+    }
+   ]
   },
   {
    "id": "business",
