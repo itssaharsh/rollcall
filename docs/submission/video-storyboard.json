@@ -1,0 +1,578 @@
+{
+ "project": {
+  "name": "Rollcall",
+  "url": "https://rollcall-sage.vercel.app/",
+  "target_seconds": 258,
+  "max_seconds": 272
+ },
+ "style": {
+  "voice": "af_heart",
+  "speed": 0.94,
+  "captions": true,
+  "music": "calm",
+  "music_db": -18,
+  "sfx": true,
+  "gpu": false,
+  "viewport": [
+   1440,
+   810
+  ],
+  "dsf": 1.5,
+  "fps": 30,
+  "mic": "mic.wav",
+  "mic_offset": -0.55,
+  "palette": {
+   "bg": [
+    "#0b1020",
+    "#111a2e",
+    "#2438c9"
+   ],
+   "accent": "#8ea0ff",
+   "site_bg": "#E8ECE6",
+   "chrome": "light",
+   "font": "Instrument Sans",
+   "display_font": "Instrument Sans"
+  }
+ },
+ "pronounce": {
+  "Rollcall": "Roll-call",
+  "AssemblyAI": "Assembly A-I",
+  "JSON": "Jason",
+  "CSV": "C-S-V",
+  "vercel": "ver-sell",
+  "2028": "twenty twenty-eight"
+ },
+ "setup": [],
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "clip",
+   "from": "sweeping",
+   "offset": 0,
+   "dur": 11,
+   "title_hold": 3.2,
+   "say": "Every insurer publishes a list of doctors. Most of it is wrong, and by law someone has to phone every office to fix it. [[0.3]] Rollcall makes the calls.",
+   "card": {
+    "layout": "title",
+    "kicker": "Rollcall",
+    "title": "It phones every office on the list."
+   },
+   "speed": 0.9
+  },
+  {
+   "id": "problem",
+   "type": "card",
+   "say": "Senate staff phoned a hundred and twenty listed therapists. They could book an appointment eighteen percent of the time. Retired, moved, wrong number, not taking that plan.",
+   "card": {
+    "layout": "stat",
+    "value": "18%",
+    "label": "of listed therapists could actually be booked",
+    "sub": "US Senate Finance Committee staff, 120 calls, 2023"
+   }
+  },
+  {
+   "id": "law",
+   "type": "live",
+   "say": "Nobody chooses to make these calls. Three US rules require them, from every health plan, every ninety days.",
+   "actions": [
+    {
+     "do": "scroll",
+     "to": "#law",
+     "offset": 0.05,
+     "ms": 1400,
+     "at": "Three"
+    },
+    {
+     "do": "camera",
+     "focus": "#law ol",
+     "zoom": 1.25,
+     "at": "rules"
+    },
+    {
+     "do": "pause",
+     "ms": 3200
+    }
+   ]
+  },
+  {
+   "id": "sweep",
+   "type": "live",
+   "say": "Meet Rollcall. Forty listings, unchecked for a year. One click. [[0.3]] Six lines dial six offices at once. Each call checks five things: still here, address, phone, new patients, in network. Every clear answer lands in its cell. A correction shows the old value struck through. A retired doctor gets flagged for removal. [[0.3]] Forty calls later, the register is done.",
+   "actions": [
+    {
+     "do": "goto",
+     "url": "https://rollcall-sage.vercel.app/console?state=before"
+    },
+    {
+     "do": "wait",
+     "for": "text=Start sweep",
+     "timeout": 30000
+    },
+    {
+     "do": "click",
+     "sel": "text=Start sweep",
+     "at": "click"
+    },
+    {
+     "do": "move",
+     "x": 700,
+     "y": 640,
+     "move_ms": 500
+    },
+    {
+     "do": "camera",
+     "focus": "section[aria-label='Phone lines']",
+     "zoom": "fit",
+     "at": "Six"
+    },
+    {
+     "do": "pause",
+     "ms": 2500
+    },
+    {
+     "do": "mark",
+     "name": "sweeping"
+    },
+    {
+     "do": "pause",
+     "ms": 6000
+    },
+    {
+     "do": "camera",
+     "focus": "section[aria-label='Directory']",
+     "zoom": 1.3,
+     "at": "Every"
+    },
+    {
+     "do": "pause",
+     "ms": 9000
+    },
+    {
+     "do": "wait",
+     "for": "text=Replay sweep",
+     "timeout": 120000
+    },
+    {
+     "do": "mark",
+     "name": "done"
+    },
+    {
+     "do": "camera",
+     "zoom": "out",
+     "at": "Forty"
+    },
+    {
+     "do": "camera",
+     "focus": "section[aria-label='Sweep tally']",
+     "zoom": "fit",
+     "at": "register"
+    },
+    {
+     "do": "pause",
+     "ms": 2000
+    }
+   ]
+  },
+  {
+   "id": "clipA",
+   "type": "live",
+   "say": "Every change has a receipt. Row seven moved in June. Listen.",
+   "actions": [
+    {
+     "do": "camera",
+     "zoom": "out"
+    },
+    {
+     "do": "click",
+     "sel": "[role=row]:has-text('Luc\u00eda Ferreira') [aria-label='Play the clip for address']",
+     "at": "Listen"
+    },
+    {
+     "do": "wait",
+     "for": "dialog.drawer[open] h2",
+     "timeout": 10000
+    },
+    {
+     "do": "hold",
+     "sel": "dialog.drawer h2",
+     "ms": 6900,
+     "mic_file": "clip.wav",
+     "focus": "dialog.drawer li:has-text('2310 Pruett')",
+     "zoom": 1.45
+    }
+   ]
+  },
+  {
+   "id": "clipB",
+   "type": "live",
+   "say": "The cell, the words that filled it, and the audio they came from. Below, the whole call, with every tool call the agent made.",
+   "actions": [
+    {
+     "do": "scroll",
+     "to": "dialog.drawer li:has-text('correct_field')",
+     "container": "dialog.drawer .overflow-y-auto",
+     "ms": 1300,
+     "at": "Below"
+    },
+    {
+     "do": "camera",
+     "focus": "dialog.drawer li:has-text('correct_field')",
+     "zoom": 1.5,
+     "at": "tool"
+    },
+    {
+     "do": "pause",
+     "ms": 2200
+    },
+    {
+     "do": "press",
+     "key": "Escape"
+    }
+   ],
+   "speed": 0.9
+  },
+  {
+   "id": "review",
+   "type": "live",
+   "say": "Some answers are not clear enough to write down. I think so, is not a fact. Those wait for a person, with the clip attached, until a person decides.",
+   "actions": [
+    {
+     "do": "click",
+     "sel": "[role=tab]:has-text('Needs a human')",
+     "at": "answers"
+    },
+    {
+     "do": "camera",
+     "focus": "section[aria-label='Needs a human'] li >> nth=0",
+     "zoom": 1.35,
+     "at": "think"
+    },
+    {
+     "do": "pause",
+     "ms": 2500
+    },
+    {
+     "do": "click",
+     "sel": "button:has-text('Schedule callback')",
+     "at": "decides"
+    },
+    {
+     "do": "pause",
+     "ms": 1600
+    }
+   ],
+   "speed": 0.9
+  },
+  {
+   "id": "refused",
+   "type": "live",
+   "say": "And here is what a prompt can't do. The office said, I think it is five thirty. The model tried to write that address. The gate refused and sent the reason back. The agent asked again, got another maybe, so it stays unwritten, and a human gets the call.",
+   "actions": [
+    {
+     "do": "click",
+     "sel": "section[aria-label='Needs a human'] button:has-text('Beatriz Camacho')",
+     "at": "office"
+    },
+    {
+     "do": "wait",
+     "for": "dialog.drawer[open] li.text-danger",
+     "timeout": 10000
+    },
+    {
+     "do": "eval",
+     "js": "document.querySelector('dialog.drawer li.text-danger')?.scrollIntoView({block:'center'})"
+    },
+    {
+     "do": "camera",
+     "focus": "dialog.drawer li.text-danger",
+     "zoom": 1.55,
+     "at": "refused"
+    },
+    {
+     "do": "pause",
+     "ms": 5000
+    },
+    {
+     "do": "camera",
+     "focus": "dialog.drawer li:has-text('mark_unconfirmed')",
+     "zoom": 1.55,
+     "at": "unwritten"
+    },
+    {
+     "do": "pause",
+     "ms": 2200
+    },
+    {
+     "do": "press",
+     "key": "Escape"
+    }
+   ],
+   "speed": 0.9
+  },
+  {
+   "id": "call-intro",
+   "type": "live",
+   "say": "Now it calls you, and you play the front desk. This is a real call with the same agent. The office changed suites, and hedged on new patients.",
+   "actions": [
+    {
+     "do": "camera",
+     "zoom": "out"
+    },
+    {
+     "do": "click",
+     "sel": "header button:has-text('Answer a call')",
+     "at": "calls"
+    },
+    {
+     "do": "wait",
+     "for": "button:has-text('Watch a sample call')",
+     "timeout": 15000
+    },
+    {
+     "do": "click",
+     "sel": "button:has-text('Watch a sample call')",
+     "at": "real"
+    },
+    {
+     "do": "wait",
+     "for": "text=Listening",
+     "timeout": 20000
+    }
+   ],
+   "speed": 0.9
+  },
+  {
+   "id": "call-live",
+   "type": "live",
+   "actions": [
+    {
+     "do": "hold",
+     "sel": "text=verification call",
+     "ms": 38900,
+     "mic_file": "callA.wav",
+     "focus": "dialog.sheet",
+     "zoom": "fit"
+    }
+   ]
+  },
+  {
+   "id": "call-result",
+   "type": "live",
+   "say": "A minute later the call ends. Suite three became suite four, the number stayed, and new patients got a question mark, because, I think she might be, is not an answer. You are now row forty-one.",
+   "actions": [
+    {
+     "do": "pause",
+     "ms": 3500
+    },
+    {
+     "do": "wait",
+     "for": "text=Added as row",
+     "timeout": 120000
+    },
+    {
+     "do": "camera",
+     "focus": "dialog.sheet aside",
+     "zoom": 1.45,
+     "at": "Suite"
+    },
+    {
+     "do": "pause",
+     "ms": 7000
+    },
+    {
+     "do": "camera",
+     "focus": "dialog.sheet h2:has-text('Added as row')",
+     "zoom": 1.4,
+     "at": "row"
+    },
+    {
+     "do": "pause",
+     "ms": 1500
+    },
+    {
+     "do": "press",
+     "key": "Escape"
+    }
+   ],
+   "speed": 0.9,
+   "lead": 3.9
+  },
+  {
+   "id": "report",
+   "type": "live",
+   "say": "Then the plan files this: an attestation sheet, every correction with the receptionist's words, and a spreadsheet for the directory team.",
+   "actions": [
+    {
+     "do": "goto",
+     "url": "https://rollcall-sage.vercel.app/report"
+    },
+    {
+     "do": "wait",
+     "for": "h1:has-text('Directory sweep report')",
+     "timeout": 30000
+    },
+    {
+     "do": "camera",
+     "focus": "article header",
+     "zoom": 1.25,
+     "at": "attestation"
+    },
+    {
+     "do": "scroll",
+     "to": "h2:has-text('Corrections')",
+     "offset": 0.12,
+     "ms": 1400,
+     "at": "correction"
+    },
+    {
+     "do": "camera",
+     "focus": "table",
+     "zoom": 1.3,
+     "at": "words"
+    },
+    {
+     "do": "pause",
+     "ms": 2500
+    }
+   ]
+  },
+  {
+   "id": "tech",
+   "type": "card",
+   "say": "Each row becomes the call's key terms, so names and streets are heard right. AssemblyAI's Voice Agent API runs both ends of every recorded call, and the live one in your browser. Each clear answer is one tool call. A write gate in code decides what reaches the directory, and refusals go back to the agent as instructions.",
+   "card": {
+    "layout": "flow",
+    "kicker": "Built on the AssemblyAI Voice Agent API",
+    "title": "How one call works",
+    "nodes": [
+     {
+      "label": "Row \u2192 key terms",
+      "sub": "names, practice, street",
+      "at": "row"
+     },
+     {
+      "label": "Voice Agent API",
+      "sub": "speech in, speech out, turn-taking",
+      "at": "Voice"
+     },
+     {
+      "label": "One tool call per answer",
+      "sub": "JSON schema, 7 tools",
+      "at": "tool"
+     },
+     {
+      "label": "Write gate in code",
+      "sub": "refusals return as instructions",
+      "at": "gate"
+     },
+     {
+      "label": "Cell + clip",
+      "sub": "value, words, audio span",
+      "at": "instructions"
+     }
+    ]
+   }
+  },
+  {
+   "id": "proof",
+   "type": "card",
+   "say": "Scored, not claimed. Every simulated office has a hidden truth sheet. Across forty recorded calls: forty of forty outcomes, a hundred and fifty of a hundred and fifty written fields, zero false writes.",
+   "card": {
+    "layout": "stat",
+    "kicker": "Scored, not claimed",
+    "value": "150 / 150",
+    "label": "written fields match the offices' hidden truth sheets",
+    "sub": "40 of 40 outcomes \u00b7 0 false writes \u00b7 5 refused by the gate \u00b7 about 8 cents per listing"
+   }
+  },
+  {
+   "id": "business",
+   "type": "card",
+   "say": "Who pays? Health plans, which must do this every ninety days by law. A manual call costs several dollars; ours cost eight cents of API time. We would charge per verified listing, evidence included.",
+   "card": {
+    "layout": "list",
+    "kicker": "Business",
+    "title": "Who pays, and for what",
+    "items": [
+     {
+      "text": "US health plans: verification is mandated every 90 days",
+      "at": "Health"
+     },
+     {
+      "text": "Manual call: several dollars. Ours: eight cents of API time",
+      "at": "manual"
+     },
+     {
+      "text": "Priced per verified listing, evidence included",
+      "at": "charge"
+     }
+    ]
+   }
+  },
+  {
+   "id": "competition",
+   "type": "card",
+   "say": "Today this is call centres, or enterprise vendors selling closed systems to the biggest plans. Rollcall keeps the audio behind every value, refuses to guess, and publishes its score.",
+   "card": {
+    "layout": "list",
+    "kicker": "What exists",
+    "title": "And what is different",
+    "items": [
+     {
+      "text": "Call centres: slow, several dollars a call, no evidence kept",
+      "at": "call"
+     },
+     {
+      "text": "Enterprise vendors: closed systems, no public proof",
+      "at": "enterprise"
+     },
+     {
+      "text": "Rollcall: audio behind every value, a gate that refuses guesses, a public score",
+      "at": "Rollcall"
+     }
+    ]
+   }
+  },
+  {
+   "id": "roadmap",
+   "type": "card",
+   "say": "Next: real phone lines, with menus and hold queues. Then a pilot with one plan's real directory, offices told in advance. Then the 2028 audits, filed with evidence for every listing.",
+   "card": {
+    "layout": "list",
+    "kicker": "Roadmap",
+    "title": "What comes next",
+    "items": [
+     {
+      "text": "Real phone lines: menus, hold queues, voicemail",
+      "at": "phone"
+     },
+     {
+      "text": "A pilot sweep with one plan's real directory",
+      "at": "pilot"
+     },
+     {
+      "text": "The 2028 audits: reports filed with evidence per listing",
+      "at": "audits"
+     }
+    ]
+   }
+  },
+  {
+   "id": "end",
+   "type": "clip",
+   "from": "done",
+   "offset": 0.5,
+   "dur": 9,
+   "reveal": false,
+   "say": "Rollcall. The link is on screen, no signup. Go be the front desk.",
+   "card": {
+    "layout": "end",
+    "title": "Rollcall",
+    "sub": "It phones every office on the list, and keeps the receipt.",
+    "url": "rollcall-sage.vercel.app",
+    "meta": "Built on the AssemblyAI Voice Agent API  \u00b7  every office simulated, no real clinic called"
+   },
+   "speed": 0.9
+  }
+ ]
+}
