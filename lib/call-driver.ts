@@ -45,8 +45,9 @@ export class SimulatedDriver implements CallDriver {
     this.began = performance.now()
     this.cursor = 0
     this.done = []
-    const loop = (now: number) => {
-      const t = (now - this.began) / 1000
+    // performance.now() on both sides: the rAF timestamp is a different clock under CDP virtual time (offset and rate)
+    const loop = () => {
+      const t = (performance.now() - this.began) / 1000
       const turn = turns[this.cursor]
       if (!turn) { this.emit({ type: 'end', result, duration, turns: this.done, audio }); return }
       if (t >= turn.t0) {
