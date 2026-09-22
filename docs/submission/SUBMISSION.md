@@ -21,7 +21,7 @@ Every office is simulated. No real clinic was called.
 **Technology tags:** AssemblyAI, Voice Agent API, Next.js, Vercel, TypeScript
 **Category tags:** Healthcare, Voice, Agents, Operations
 
-**Links:** demo https://rollcall-sage.vercel.app · repo https://github.com/itssaharsh/rollcall · slides `docs/submission/slides.pdf` · cover `docs/submission/cover.png`
+**Links:** demo https://rollcall-sage.vercel.app · repo https://github.com/itssaharsh/rollcall · slides `docs/submission/slides.pdf`
 
 ## How lablab scores (read from lablab.ai/hackathon-rules on 2026-09-22)
 
@@ -34,9 +34,9 @@ Each criterion is 1 to 5. What the top scores ask for, in lablab's words:
 
 ## Video: done
 
-`docs/submission/rollcall-demo.mp4` (4:25, 1080p30, −14 LUFS, captions burned in; `rollcall-demo.srt` alongside). Built from the live site with a synthesised narrator (Kokoro, voice af_heart); the phone-call audio in it is the real recorded calls from `public/calls/`. Thumbnail: `video-thumbnail.png`. Script: `video-script.md`. To re-render: the storyboard is `video-storyboard.json` (needs the `product-demo-video` kit in `video/`).
+`docs/submission/rollcall-demo.mp4` (4:25, 1080p30, −14 LUFS, captions burned in; `rollcall-demo.srt` alongside). Built from the live site with a synthesised narrator (Kokoro, voice af_heart); the phone-call audio in it is the real recorded calls from `public/calls/`.
 
-Upload to YouTube as unlisted, paste the link in the lablab form. If you would rather voice it yourself, read `video-script.md` over the same footage.
+Upload to YouTube as unlisted, paste the link in the lablab form.
 
 ## Video plan (the version above follows this)
 
