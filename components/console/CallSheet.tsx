@@ -88,7 +88,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
     setState('wrap'); setPartial(null)
     setTimeout(() => {
       const listing: Listing = { ...office, tag: sample ? 'Sample call' : 'Your call', result: e.result, call: { line: 7, startAt: 0, duration: e.duration, answeredBy: 'person', turns: e.turns, audio: e.audio } }
-      setRow(addYourRow(listing)); setStampText(e.result.stamp); setOutcome(e.result.outcome); setState('done')
+      setFields(e.result.fields); setRow(addYourRow(listing)); setStampText(e.result.stamp); setOutcome(e.result.outcome); setState('done')
     }, 1100)
   }, [])
 

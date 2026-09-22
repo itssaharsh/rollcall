@@ -51,8 +51,9 @@ export class SimulatedDriver implements CallDriver {
       if (!turn) { this.emit({ type: 'end', result, duration, turns: this.done, audio }); return }
       if (t >= turn.t0) {
         if (turn.who === 'tool') {
-          const key = turn.tool?.args.field as FieldKey | undefined
-          if (key) this.emit({ type: 'field', key, result: result.fields[key] })
+          // confirm_fields carries a list; the other tools a single field
+          const args = turn.tool?.args as { field?: FieldKey; fields?: FieldKey[] } | undefined
+          for (const key of args?.fields ?? (args?.field ? [args.field] : [])) if (result.fields[key]) this.emit({ type: 'field', key, result: result.fields[key] })
           this.done.push(turn); this.cursor++
         } else if (t >= turn.t1) {
           this.emit({ type: 'turn', turn }); this.done.push(turn); this.cursor++

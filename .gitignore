@@ -13,3 +13,5 @@ public/calls/*.wav
 recordings/*.log
 .env*
 private/
+video/
+*.mp4
