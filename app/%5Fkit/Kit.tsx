@@ -48,7 +48,7 @@ export function Kit() {
 
       <Block title="Type">
         <p className="t-display text-[44px]">Directory sweep 44</p><p className="t-display text-[32px]">Display 32 condensed 700</p><p className="t-display text-[20px]">Display 20</p>
-        <p className="mt-2 text-[16px]">Body 16. The agent never writes a value it couldn’t confirm.</p><p>Body 14. Simulated offices — no real clinics were called.</p>
+        <p className="mt-2 text-[16px]">Body 16. The agent never writes a value it couldn’t confirm.</p><p>Body 14. Simulated offices: no real clinics were called.</p>
         <p className="t-listing">Listing 13 at 85% width: Northgate Psychiatry Associates, 1180 Kestrel Ave, Suite 300</p>
         <p className="t-mono">Mono 11 · (564) 555-0117 · 0:52 · $0.07</p><p className="t-label">Label 10 · line 3 · verified 21 sep</p>
       </Block>

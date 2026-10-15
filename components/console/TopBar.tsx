@@ -32,7 +32,7 @@ export function TopBar({ mode, done, total, muted, attention, onSweep, onAnswer,
 export function NoticeStrip({ running }: { running?: boolean }) {
   return (
     <div className="flex min-h-8 flex-wrap items-center justify-between gap-x-6 gap-y-0.5 bg-surface-2 px-4 py-1.5 sm:px-6" role="note">
-      <span className="t-label text-ink">Simulated offices — no real clinics were called</span>
+      <span className="t-label text-ink">Simulated offices: no real clinics were called</span>
       <span className="t-label text-ink-muted">{running ? `Recorded sweep · replaying at ${META.speed}×` : `Recorded sweep · ${META.sweepDate}`}</span>
     </div>
   )

@@ -136,7 +136,7 @@ export function CallSheet({ open, forced, onClose, onRow }: { open: boolean; for
           <span className="t-mono ml-auto text-ink-muted">{state === 'connected' || state === 'capped' ? `${clock(secs)} / ${clock(CAP)}` : ''}</span>
           <IconButton label="Close (Esc)" onClick={() => (state === 'connected' ? confirm('Hang up and close?') && close() : close())}><X size={16} /></IconButton>
         </header>
-        <p className="t-label shrink-0 bg-surface-2 px-4 py-1.5 text-ink">Simulated offices — no real clinics were called</p>
+        <p className="t-label shrink-0 bg-surface-2 px-4 py-1.5 text-ink">Simulated offices: no real clinics were called</p>
 
         <div className="grid min-h-0 flex-1 grid-cols-1 sm:grid-cols-[1fr_320px]">
           {/* the line */}
